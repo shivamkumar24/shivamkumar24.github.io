@@ -76,7 +76,9 @@ export default function Navbar() {
               bg={"red.600"}
               href={"#"}
               _hover={{
-                bg: "pink.300",
+                bg: "white",
+                color: "red.800",
+                border: "1px solid red",
               }}
             >
               Resume

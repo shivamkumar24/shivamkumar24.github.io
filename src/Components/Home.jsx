@@ -21,21 +21,21 @@ export default function Home() {
         <Box p="6">
           <Box
             fontWeight="bold"
-            fontSize={{ base: "15px", md: "30px" }}
+            fontSize={{ base: "22px", md: "30px" }}
             // textAlign={{ base: "center" }}
           >
             Hi, I am
           </Box>
           <Box
             fontWeight="bold"
-            fontSize={{ base: "22px", md: "45px" }}
+            fontSize={{ base: "30px", md: "45px" }}
             // textAlign={{ base: "center" }}
           >
             Shivam Kumar
           </Box>
           <Box
             fontWeight="bold"
-            fontSize={{ base: "15px", md: "30px" }}
+            fontSize={{ base: "18px", md: "30px" }}
             // textAlign={{ base: "center" }}
             color="red"
           >
@@ -51,7 +51,7 @@ export default function Home() {
               bg={"red"}
               href={"#"}
               _hover={{
-                bg: "red.500",
+                bg: "red.800",
               }}
             >
               Resume
@@ -63,8 +63,8 @@ export default function Home() {
           src={property.imageUrl}
           alt={property.imageAlt}
           borderRadius="50%"
-          height={{ base: "200px", md: "300px" }}
-          width={{ base: "200px", md: "300px" }}
+          height={{ base: "225px", md: "320px" }}
+          width={{ base: "225px", md: "320px" }}
         />
       </Box>
 
@@ -107,7 +107,7 @@ export default function Home() {
             </Box>
             <Box fontSize={{ base: "12px", md: "18px" }} mb="8px">
               I am a passionate and self-motivated Aspiring Full-Stack Develoer
-              from Bihar (India). Seeking challenging oppurtunities to make the
+              from Bihar(India). Seeking challenging oppurtunities to make the
               best use of my abilities and knowledge to develop both my
               professional and interpersonal skills, along with fulfilling the
               organization's growth and goals.
