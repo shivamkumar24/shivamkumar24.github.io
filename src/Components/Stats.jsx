@@ -2,7 +2,7 @@ import React from "react";
 
 const Stats = () => {
   return (
-    <div style={{ backgroundColor: "azure" }}>
+    <div style={{ backgroundColor: "rgb(198, 213, 206)" }}>
       <div style={{ width: "40%", margin: "auto" }}>
         <a href="https://github.com/shivamkumar24">
           <img

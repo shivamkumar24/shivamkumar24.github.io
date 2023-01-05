@@ -21,7 +21,7 @@ const Calender = () => {
   };
 
   return (
-    <div style={{ padding: "18px", backgroundColor: "azure" }}>
+    <div style={{ padding: "18px", backgroundColor: "rgb(198, 213, 206)" }}>
       <GitHubCalendar
         style={{ margin: "auto" }}
         username="shivamkumar24"
