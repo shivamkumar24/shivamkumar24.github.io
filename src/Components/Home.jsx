@@ -1,4 +1,4 @@
-import { Box, Button, Image } from "@chakra-ui/react";
+import { Box, Button, HStack, Image } from "@chakra-ui/react";
 
 export default function Home() {
   const property = {
@@ -6,14 +6,34 @@ export default function Home() {
     imageAlt: "Shivam Profile Picture",
   };
 
+  const contactIcon = [
+    {
+      name: "LinkedIn",
+      linkSrc: "https://www.linkedin.com/in/shivamkumar24/",
+      imgSrc:
+        "https://img.freepik.com/free-icon/linkedin_318-183415.jpg?w=2000",
+    },
+    {
+      name: "GitHub",
+      linkSrc: "https://github.com/shivamkumar24",
+      imgSrc:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPckPxK1s_0qZb7Y3z4lzgLaHryrHEG7lSplIx4kgfpNj80QEC0u4n6q3R3l6LoMT_ak&usqp=CAU",
+    },
+    {
+      name: "Gmail",
+      linkSrc: "shivam2432000@gmail.com",
+      imgSrc:
+        "https://play-lh.googleusercontent.com/KSuaRLiI_FlDP8cM4MzJ23ml3og5Hxb9AapaGTMZ2GgR103mvJ3AAnoOFz1yheeQBBI",
+    },
+  ];
+
   return (
     <>
-      {/* First Container */}
       <Box
         display="flex"
-        pt={{ base: "20px", md: "100px" }}
+        backgroundColor="whatsapp.200"
+        pt={{ base: "20px", md: "50px" }}
         pb={{ base: "20px" }}
-        mb={{ base: "30px", md: "50px" }}
         justifyContent={{ base: "center", md: "space-around" }}
         alignItems={{ base: "center" }}
         flexDirection={{ base: "column", md: "row" }}
@@ -26,6 +46,7 @@ export default function Home() {
           >
             Hi, I am
           </Box>
+
           <Box
             fontWeight="bold"
             fontSize={{ base: "30px", md: "45px" }}
@@ -33,6 +54,7 @@ export default function Home() {
           >
             Shivam Kumar
           </Box>
+
           <Box
             fontWeight="bold"
             fontSize={{ base: "18px", md: "30px" }}
@@ -41,6 +63,7 @@ export default function Home() {
           >
             Full Stack Web Developer
           </Box>
+
           <Box margin="10px">
             <Button
               display={"inline-flex"}
@@ -57,6 +80,26 @@ export default function Home() {
               Resume
             </Button>
           </Box>
+
+          <HStack
+            marginTop="18px"
+            width={{ base: "150px", md: "150px" }}
+            display="flex"
+            justifyContent="space-around"
+          >
+            {contactIcon.map((el) => (
+              <a href={el.linkSrc}>
+                <img
+                  key={el.name}
+                  alt={el.name}
+                  src={el.imgSrc}
+                  width="25px"
+                  height="25px"
+                  cursor="pointer"
+                />
+              </a>
+            ))}
+          </HStack>
         </Box>
 
         <Image
@@ -67,56 +110,6 @@ export default function Home() {
           width={{ base: "225px", md: "320px" }}
         />
       </Box>
-
-      {/* Second Container */}
-      <Box>
-        <Box
-          fontWeight="bold"
-          fontSize={{ base: "22px", md: "45px" }}
-          textAlign={{ base: "center" }}
-          textDecoration="underline"
-        >
-          Who I am
-        </Box>
-        <Box
-          width="90%"
-          margin="auto"
-          display="flex"
-          pt={{ base: "20px", md: "30px" }}
-          pb={{ base: "20px" }}
-          mb={{ base: "30px", md: "50px" }}
-          justifyContent={{ base: "center", md: "space-around" }}
-          alignItems={{ base: "center" }}
-          flexDirection={{ base: "column", md: "row" }}
-        >
-          <Image
-            src="https://t3.ftcdn.net/jpg/00/79/32/70/240_F_79327071_ubG3dWNUwUeVFqALg55FLqGpJFgfnoRY.jpg"
-            alt="aboutUs"
-            borderRadius="20px"
-            height={{ base: "200px", md: "300px" }}
-            width={{ base: "200px", md: "500px" }}
-          />
-          <Box margin="20px">
-            <Box
-              fontSize={{ base: "15px", md: "22px" }}
-              mb="8px"
-              fontWeight="semibold"
-            >
-              My name is Shivam Kumar. I am from East Champaran, Bihar ( India )
-              and I enjoy creating things that live on the internet.
-            </Box>
-            <Box fontSize={{ base: "12px", md: "18px" }} mb="8px">
-              I am a passionate and self-motivated Aspiring Full-Stack Develoer.
-              Seeking challenging oppurtunities to make the best use of my
-              abilities and knowledge to develop both my professional and
-              interpersonal skills, along with fulfilling the organization's
-              growth and goals.
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Third Container */}
     </>
   );
 }

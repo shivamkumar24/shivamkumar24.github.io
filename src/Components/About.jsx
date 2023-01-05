@@ -1,0 +1,63 @@
+import { Box, Image } from "@chakra-ui/react";
+import React from "react";
+
+const About = () => {
+  return (
+    <Box>
+      <Box
+        fontWeight="bold"
+        fontSize={{ base: "22px", md: "45px" }}
+        textAlign={{ base: "center" }}
+        textDecoration="underline"
+      >
+        Who I am
+      </Box>
+      <Box
+        width="90%"
+        margin="auto"
+        display="flex"
+        pt={{ base: "20px", md: "30px" }}
+        pb={{ base: "20px" }}
+        mb={{ base: "20px", md: "25px" }}
+        justifyContent={{ base: "center", md: "space-around" }}
+        alignItems={{ base: "center" }}
+        flexDirection={{ base: "column", md: "row" }}
+      >
+        <Image
+          src="https://t3.ftcdn.net/jpg/00/79/32/70/240_F_79327071_ubG3dWNUwUeVFqALg55FLqGpJFgfnoRY.jpg"
+          alt="aboutUs"
+          borderRadius="20px"
+          height={{ base: "200px", md: "300px" }}
+          width={{ base: "200px", md: "500px" }}
+        />
+        <Box margin="20px">
+          <Box
+            fontSize={{ base: "15px", md: "22px" }}
+            mb="8px"
+            fontWeight="semibold"
+          >
+            My name is Shivam Kumar. I am from East Champaran, Bihar ( India )
+            and I enjoy creating things that live on the internet.
+          </Box>
+          <Box fontSize={{ base: "12px", md: "18px" }} mb="8px">
+            I am a passionate and self-motivated Aspiring Full-Stack Develoer.
+            Seeking challenging oppurtunities to make the best use of my
+            abilities and knowledge to develop both my professional and
+            interpersonal skills, along with fulfilling the organization's
+            growth and goals.
+          </Box>
+        </Box>
+      </Box>
+      <Box
+        fontWeight="bold"
+        fontSize={{ base: "22px", md: "45px" }}
+        textAlign={{ base: "center" }}
+        textDecoration="underline"
+      >
+        Github Activity
+      </Box>
+    </Box>
+  );
+};
+
+export default About;
