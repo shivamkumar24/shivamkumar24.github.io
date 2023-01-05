@@ -6,6 +6,7 @@ import Stats from "./Components/Stats";
 import Project from "./Components/Project";
 import TechSkill from "./Components/TechSkill";
 import MySkills from "./Components/MySkills";
+import Chat from "./Components/Chat";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Project />
       <TechSkill />
       <MySkills />
+      <Chat />
     </div>
   );
 }
