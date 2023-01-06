@@ -46,13 +46,7 @@ const Project = () => {
             textAlign="center"
           >
             <Flex flex={1} bg="blue.200">
-              <Image
-                objectFit="cover"
-                boxSize="100%"
-                src={
-                  "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                }
-              />
+              <Image objectFit="cover" boxSize="100%" src={"beautybebo.jpeg"} />
             </Flex>
             <Stack
               flex={1}
@@ -63,7 +57,7 @@ const Project = () => {
               pt={2}
             >
               <Heading fontSize={"xl"} fontFamily={"body"}>
-                BEAUTYBEBO.COM - CLONE
+                Beautybebo.com - Clone
               </Heading>
 
               <Text
@@ -80,11 +74,11 @@ const Project = () => {
                 display="flex"
                 flexDirection={{ base: "column", md: "row" }}
               >
-                <Text>
+                <Text fontWeight={"bold"}>
                   <span style={{ color: "red", fontWeight: "600" }}>
                     Tech Stack:
                   </span>{" "}
-                  JavaScript | ES6 | ReactJS | React-Router | API
+                  ReactJS | React-Router | API | JavaScript | ES6
                 </Text>
               </Stack>
 
@@ -99,7 +93,10 @@ const Project = () => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                <Link href="https://github.com/shivamkumar24/Beautybebo.com-Clone">
+                <Link
+                  href="https://github.com/shivamkumar24/Beautybebo.com-Clone"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}
@@ -111,7 +108,10 @@ const Project = () => {
                     GitHub
                   </Button>
                 </Link>
-                <Link href="https://beautybebo-com-clone-jdmb.vercel.app/">
+                <Link
+                  href="https://beautybebo-com-clone-jdmb.vercel.app/"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}
@@ -152,13 +152,7 @@ const Project = () => {
             textAlign="center"
           >
             <Flex flex={1} bg="blue.200">
-              <Image
-                objectFit="cover"
-                boxSize="100%"
-                src={
-                  "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                }
-              />
+              <Image objectFit="cover" boxSize="100%" src={"myntra.jpeg"} />
             </Flex>
             <Stack
               flex={1}
@@ -169,7 +163,7 @@ const Project = () => {
               pt={2}
             >
               <Heading fontSize={"xl"} fontFamily={"body"}>
-                BEAUTYBEBO.COM - CLONE
+                Myntra.com - Clone
               </Heading>
 
               <Text
@@ -177,24 +171,24 @@ const Project = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                Beauty Bebo is India's fastest-growing online retail store for
-                makeup, skin care, hair care, personal care, mom and baby care,
-                fragrance, and Ayurveda products.
+                Myntra is a one stop shop for all your fashion and lifestyle
+                needs. Being India's largest e-commerce store for fashion and
+                lifestyle products
               </Text>
 
               <Stack
                 display="flex"
                 flexDirection={{ base: "column", md: "row" }}
               >
-                <Text>
+                <Text fontWeight={"bold"}>
                   <span style={{ color: "red", fontWeight: "600" }}>
                     Tech Stack:
                   </span>{" "}
-                  JavaScript | ES6 | ReactJS | React-Router | API
+                  JavaScript | ES6 | Local Storage | CSS | HTML
                 </Text>
               </Stack>
 
-              <Text>An Individual project executed in 4 days.</Text>
+              <Text>A group project executed in 4 days.</Text>
 
               <Stack
                 width={"70%"}
@@ -205,7 +199,10 @@ const Project = () => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                <Link href="https://github.com/shivamkumar24/Beautybebo.com-Clone">
+                <Link
+                  href="https://github.com/shivamkumar24/Myntra_Clone"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}
@@ -217,7 +214,10 @@ const Project = () => {
                     GitHub
                   </Button>
                 </Link>
-                <Link href="https://beautybebo-com-clone-jdmb.vercel.app/">
+                <Link
+                  href="https://idyllic-begonia-67c760.netlify.app/"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}
@@ -261,9 +261,7 @@ const Project = () => {
               <Image
                 objectFit="cover"
                 boxSize="100%"
-                src={
-                  "https://images.unsplash.com/photo-1520810627419-35e362c5dc07?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
-                }
+                src={"sugarcosmetics.jpeg"}
               />
             </Flex>
             <Stack
@@ -275,7 +273,7 @@ const Project = () => {
               pt={2}
             >
               <Heading fontSize={"xl"} fontFamily={"body"}>
-                BEAUTYBEBO.COM - CLONE
+                SugarCosmetics.com - Clone
               </Heading>
 
               <Text
@@ -283,24 +281,24 @@ const Project = () => {
                 color={useColorModeValue("gray.700", "gray.400")}
                 px={3}
               >
-                Beauty Bebo is India's fastest-growing online retail store for
-                makeup, skin care, hair care, personal care, mom and baby care,
-                fragrance, and Ayurveda products.
+                Sugar Cosmetics is one of India's fastest-growing premium
+                cosmetic companies. it has become the first choice of many
+                Indian women.
               </Text>
 
               <Stack
                 display="flex"
                 flexDirection={{ base: "column", md: "row" }}
               >
-                <Text>
+                <Text fontWeight={"bold"}>
                   <span style={{ color: "red", fontWeight: "600" }}>
                     Tech Stack:
                   </span>{" "}
-                  JavaScript | ES6 | ReactJS | React-Router | API
+                  JavaScript | ES6 | Local Storage | CSS | HTML
                 </Text>
               </Stack>
 
-              <Text>An Individual project executed in 4 days.</Text>
+              <Text>An individual project executed in 4 days.</Text>
 
               <Stack
                 width={"70%"}
@@ -311,7 +309,10 @@ const Project = () => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
               >
-                <Link href="https://github.com/shivamkumar24/Beautybebo.com-Clone">
+                <Link
+                  href="https://github.com/shivamkumar24/SugarCosmetics.com-Clone"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}
@@ -323,7 +324,10 @@ const Project = () => {
                     GitHub
                   </Button>
                 </Link>
-                <Link href="https://beautybebo-com-clone-jdmb.vercel.app/">
+                <Link
+                  href="https://effortless-strudel-bc1dac.netlify.app/"
+                  target={"_blank"}
+                >
                   <Button
                     flex={1}
                     fontSize={"sm"}

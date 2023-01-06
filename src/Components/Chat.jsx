@@ -118,7 +118,8 @@ const Chat = () => {
                       />
                     </Link>
 
-                    <Link href="shivam2432000@gmail.com">
+                    {/* <Link href="shivam2432000@gmail.com"> */}
+                    <a href="mailto:shivam2432000@gmail.com">
                       <IconButton
                         aria-label="discord"
                         variant="ghost"
@@ -127,7 +128,8 @@ const Chat = () => {
                         _hover={{ bg: "#0D74FF" }}
                         icon={<MdEmail size="28px" />}
                       />
-                    </Link>
+                    </a>
+                    {/* </Link> */}
                   </HStack>
                 </Box>
               </WrapItem>

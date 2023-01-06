@@ -84,22 +84,24 @@ export default function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <Button
-              display={"inline-flex"}
-              fontSize={"md"}
-              fontWeight={"bold"}
-              letterSpacing="2px"
-              color={"white"}
-              bg={"red.600"}
-              href={"#"}
-              _hover={{
-                bg: "white",
-                color: "red.800",
-                border: "1px solid red",
-              }}
-            >
-              Resume
-            </Button>
+            <a href="Resume.pdf" download>
+              <Button
+                display={"inline-flex"}
+                fontSize={"md"}
+                fontWeight={"bold"}
+                letterSpacing="2px"
+                color={"white"}
+                bg={"red.600"}
+                href={"#"}
+                _hover={{
+                  bg: "white",
+                  color: "red.800",
+                  border: "1px solid red",
+                }}
+              >
+                Resume
+              </Button>
+            </a>
           </Flex>
         </Flex>
 

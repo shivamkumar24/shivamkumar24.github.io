@@ -38,20 +38,21 @@ export default function Home() {
           </Box>
 
           <Box margin="10px">
-            <Button
-              display={"inline-flex"}
-              fontSize={{ base: "sm", md: "md" }}
-              fontWeight={"bold"}
-              letterSpacing="2px"
-              color={"white"}
-              bg={"red"}
-              href={"#"}
-              _hover={{
-                bg: "red.800",
-              }}
-            >
-              Resume
-            </Button>
+            <a href="Resume.pdf" download>
+              <Button
+                display={"inline-flex"}
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight={"bold"}
+                letterSpacing="2px"
+                color={"white"}
+                bg={"red"}
+                _hover={{
+                  bg: "red.800",
+                }}
+              >
+                Resume
+              </Button>
+            </a>
           </Box>
 
           {/* Social Icons */}
@@ -84,7 +85,8 @@ export default function Home() {
               />
             </Link>
 
-            <Link href="shivam2432000@gmail.com">
+            {/* <Link href="shivam2432000@gmail.com"> */}
+            <a href="mailto:shivam2432000@gmail.com">
               <IconButton
                 aria-label="discord"
                 variant="ghost"
@@ -93,7 +95,8 @@ export default function Home() {
                 _hover={{ bg: "#0D74FF" }}
                 icon={<MdEmail size="28px" />}
               />
-            </Link>
+            </a>
+            {/* </Link> */}
           </HStack>
         </Box>
 
