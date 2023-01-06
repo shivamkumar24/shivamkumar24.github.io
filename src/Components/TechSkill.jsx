@@ -14,8 +14,9 @@ const TechSkill = () => {
     <Stack
       margin="auto"
       backgroundColor="lavender"
-      padding={{ base: "10px 10%", md: "10px 22%" }}
+      padding={{ base: "10px 1%", md: "10px 22%" }}
     >
+      {/* Tech Stack */}
       <Box
         color="red.600"
         fontWeight="bold"
@@ -29,6 +30,7 @@ const TechSkill = () => {
         templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
         gap={8}
       >
+        {/* First Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -57,6 +59,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Second Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -85,6 +89,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Third Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -113,6 +119,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Fourth Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -141,6 +149,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Fifth Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -169,6 +179,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Sixth Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -197,6 +209,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Seventh Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -225,6 +239,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Eight Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -253,6 +269,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Nineth Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -282,6 +300,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Tenth Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -310,6 +330,8 @@ const TechSkill = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Eleventh Tech Stack */}
         <GridItem>
           <Stack
             borderWidth="1px"

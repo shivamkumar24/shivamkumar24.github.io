@@ -1,31 +1,13 @@
-import { Box, Button, HStack, Image } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton, Image } from "@chakra-ui/react";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const property = {
     imageUrl: "https://avatars.githubusercontent.com/u/76693614?v=4",
     imageAlt: "Shivam Profile Picture",
   };
-
-  const contactIcon = [
-    {
-      name: "LinkedIn",
-      linkSrc: "https://www.linkedin.com/in/shivamkumar24/",
-      imgSrc:
-        "https://img.freepik.com/free-icon/linkedin_318-183415.jpg?w=2000",
-    },
-    {
-      name: "GitHub",
-      linkSrc: "https://github.com/shivamkumar24",
-      imgSrc:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvPckPxK1s_0qZb7Y3z4lzgLaHryrHEG7lSplIx4kgfpNj80QEC0u4n6q3R3l6LoMT_ak&usqp=CAU",
-    },
-    {
-      name: "Gmail",
-      linkSrc: "shivam2432000@gmail.com",
-      imgSrc:
-        "https://play-lh.googleusercontent.com/KSuaRLiI_FlDP8cM4MzJ23ml3og5Hxb9AapaGTMZ2GgR103mvJ3AAnoOFz1yheeQBBI",
-    },
-  ];
 
   return (
     <>
@@ -39,26 +21,17 @@ export default function Home() {
         flexDirection={{ base: "column", md: "row" }}
       >
         <Box p="6">
-          <Box
-            fontWeight="bold"
-            fontSize={{ base: "22px", md: "30px" }}
-            // textAlign={{ base: "center" }}
-          >
+          <Box fontWeight="bold" fontSize={{ base: "22px", md: "30px" }}>
             Hi, I am
           </Box>
 
-          <Box
-            fontWeight="bold"
-            fontSize={{ base: "30px", md: "45px" }}
-            // textAlign={{ base: "center" }}
-          >
+          <Box fontWeight="bold" fontSize={{ base: "30px", md: "45px" }}>
             Shivam Kumar
           </Box>
 
           <Box
             fontWeight="bold"
             fontSize={{ base: "18px", md: "30px" }}
-            // textAlign={{ base: "center" }}
             color="red"
           >
             Full Stack Web Developer
@@ -81,24 +54,46 @@ export default function Home() {
             </Button>
           </Box>
 
+          {/* Social Icons */}
+
           <HStack
-            marginTop="18px"
-            width={{ base: "150px", md: "150px" }}
-            display="flex"
-            justifyContent="space-around"
+            mt={{ lg: 5, md: 5 }}
+            spacing={5}
+            px={5}
+            alignItems="flex-start"
           >
-            {contactIcon.map((el) => (
-              <a href={el.linkSrc}>
-                <img
-                  key={el.name}
-                  alt={el.name}
-                  src={el.imgSrc}
-                  width="25px"
-                  height="25px"
-                  cursor="pointer"
-                />
-              </a>
-            ))}
+            <Link href="https://www.linkedin.com/in/shivamkumar24/">
+              <IconButton
+                aria-label="linkedin"
+                variant="ghost"
+                size="lg"
+                isRound={true}
+                _hover={{ bg: "#0D74FF" }}
+                icon={<BsLinkedin size="28px" />}
+              />
+            </Link>
+
+            <Link href="https://github.com/shivamkumar24">
+              <IconButton
+                aria-label="github"
+                variant="ghost"
+                size="lg"
+                isRound={true}
+                _hover={{ bg: "#0D74FF" }}
+                icon={<BsGithub size="28px" />}
+              />
+            </Link>
+
+            <Link href="shivam2432000@gmail.com">
+              <IconButton
+                aria-label="discord"
+                variant="ghost"
+                size="lg"
+                isRound={true}
+                _hover={{ bg: "#0D74FF" }}
+                icon={<MdEmail size="28px" />}
+              />
+            </Link>
           </HStack>
         </Box>
 

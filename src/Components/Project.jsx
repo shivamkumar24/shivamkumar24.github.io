@@ -16,6 +16,7 @@ import {
 const Project = () => {
   return (
     <Stack margin="auto" backgroundColor="cornflowerblue">
+      {/* Projects */}
       <Box
         color="yellow"
         fontWeight="bold"
@@ -29,6 +30,7 @@ const Project = () => {
         templateColumns={{ sm: "repeat(1,1fr)", md: "repeat(3, 1fr)" }}
         gap={8}
       >
+        {/* First Project */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -133,6 +135,8 @@ const Project = () => {
             </Stack>
           </Stack>
         </GridItem>
+
+        {/* Second Project */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -237,6 +241,8 @@ const Project = () => {
             </Stack>
           </Stack>
         </GridItem>
+
+        {/* Third Project */}
         <GridItem>
           <Stack
             borderWidth="1px"

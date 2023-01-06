@@ -32,6 +32,7 @@ const Chat = () => {
       overflow="hidden"
       p="10px"
     >
+      {/* Form and Contact details */}
       <Flex>
         <Box
           bg="#02054B"
@@ -44,7 +45,9 @@ const Chat = () => {
             <Heading mb={{ base: "12px", md: "22px" }}>
               Take a Coffee And Chat with me
             </Heading>
+
             <Wrap spacing={{ base: 10, sm: 3, md: 5, lg: 10 }}>
+              {/* Contact Details */}
               <WrapItem>
                 <Box>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
@@ -128,6 +131,8 @@ const Chat = () => {
                   </HStack>
                 </Box>
               </WrapItem>
+
+              {/* Form */}
               <WrapItem>
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
@@ -180,7 +185,9 @@ const Chat = () => {
           </Box>
         </Box>
       </Flex>
-      <Heading fontSize={{ base: "12px", md: "18px" }}>
+
+      {/* Footer */}
+      <Heading fontSize={{ base: "12px", md: "18px" }} textAlign="center">
         Designed and Developed by{" "}
         <span style={{ color: "red" }}>Shivam Kumar</span>,© Copyright 2023. All
         rights reserved.

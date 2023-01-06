@@ -26,6 +26,7 @@ const MySkills = () => {
         My Skills
       </Box>
 
+      {/* Soft Skills */}
       <Heading
         paddingLeft={{ base: "12px", md: "25px" }}
         textDecoration="underline"
@@ -36,6 +37,7 @@ const MySkills = () => {
         templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
         gap={{ base: "", md: "4" }}
       >
+        {/* First Soft Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -64,6 +66,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Second Soft Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -92,6 +96,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Third Soft Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -120,6 +126,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Fourth Soft Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -150,6 +158,7 @@ const MySkills = () => {
         </GridItem>
       </Grid>
 
+      {/* Tech Skills */}
       <Heading
         paddingLeft={{ base: "12px", md: "25px" }}
         textDecoration="underline"
@@ -160,6 +169,7 @@ const MySkills = () => {
         templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
         gap={{ base: "", md: "4" }}
       >
+        {/* First Tech Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -188,6 +198,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Second Tech Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -216,6 +228,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Third Tech Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
@@ -244,6 +258,8 @@ const MySkills = () => {
             </Heading>
           </Stack>
         </GridItem>
+
+        {/* Fourth Tech Skills */}
         <GridItem>
           <Stack
             borderWidth="1px"
