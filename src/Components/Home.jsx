@@ -1,7 +1,6 @@
-import { Box, Button, HStack, IconButton, Image } from "@chakra-ui/react";
+import { Box, Button, HStack, IconButton, Image, Link } from "@chakra-ui/react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   const property = {
