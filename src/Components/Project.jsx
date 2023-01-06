@@ -82,7 +82,7 @@ const Project = () => {
                 </Text>
               </Stack>
 
-              <Text>An Individual project executed in 4 days.</Text>
+              <Text>An individual project executed in 4 days.</Text>
 
               <Stack
                 width={"70%"}
