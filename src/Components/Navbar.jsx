@@ -10,14 +10,15 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+// import { Link as Scroll } from "react-scroll";
 
 const Links = [
-  "Home",
-  "About Me",
-  "Projects",
-  "Tech-Stack",
-  "Skills",
-  "Contact",
+  { to: "/", name: "Home" },
+  { to: "/about", name: "About Me" },
+  { to: "/projects", name: "Projects" },
+  { to: "/techstack", name: "Tech-Stack" },
+  { to: "/myskills", name: "Skills" },
+  { to: "/contact", name: "Contact" },
 ];
 
 const NavLink = ({ children }) => (
@@ -69,7 +70,16 @@ export default function Navbar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name}>{link.name}</NavLink>
+                // <Scroll
+                //   to={link.to}
+                //   spy={true}
+                //   smooth={true}
+                //   offset={50}
+                //   duration={500}
+                // >
+                //   {link.name}
+                // </Scroll>
               ))}
             </HStack>
           </HStack>
@@ -97,7 +107,7 @@ export default function Navbar() {
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name}>{link.name}</NavLink>
               ))}
             </Stack>
           </Box>
