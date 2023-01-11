@@ -38,38 +38,3 @@ const Calender = () => {
 };
 
 export default Calender;
-
-// import React from "react";
-// import ReactDOM from "react-dom";
-// import Calendar from "react-github-contribution-calendar";
-
-// const Calender = () => {
-//   var values = "2022-03-01";
-//   var until = "2023-01-08";
-//   var weekNames = ["s", "m", "t", "w", "t", "f", "s"];
-//   var monthNames = [
-//     "1",
-//     "2",
-//     "3",
-//     "4",
-//     "5",
-//     "6",
-//     "7",
-//     "8",
-//     "9",
-//     "10",
-//     "11",
-//     "12",
-//   ];
-//   return (
-//     <Calendar
-//       username={"shivamkumar24"}
-//       values={values}
-//       until={until}
-//       weekNames={weekNames}
-//       monthNames={monthNames}
-//     />
-//   );
-// };
-
-// export default Calender;

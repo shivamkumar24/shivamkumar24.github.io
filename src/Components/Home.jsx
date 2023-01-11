@@ -1,20 +1,22 @@
 import { Box, Button, HStack, IconButton, Image, Link } from "@chakra-ui/react";
+import { forwardRef } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
-export default function Home() {
+const Home = forwardRef((props, ref) => {
   const property = {
     imageUrl: "https://avatars.githubusercontent.com/u/76693614?v=4",
     imageAlt: "Shivam Profile Picture",
   };
 
   return (
-    <>
+    <section ref={ref}>
       <Box
         display="flex"
         backgroundColor="whatsapp.200"
-        pt={{ base: "20px", md: "50px" }}
+        pt={{ base: "45px", md: "80px" }}
         pb={{ base: "20px" }}
+        // mt={{ base: "3px", md: "5px" }}
         justifyContent={{ base: "center", md: "space-around" }}
         alignItems={{ base: "center" }}
         flexDirection={{ base: "column", md: "row" }}
@@ -107,6 +109,8 @@ export default function Home() {
           width={{ base: "225px", md: "320px" }}
         />
       </Box>
-    </>
+    </section>
   );
-}
+});
+
+export default Home;

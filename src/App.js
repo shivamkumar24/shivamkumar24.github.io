@@ -7,19 +7,36 @@ import Project from "./Components/Project";
 import TechSkill from "./Components/TechSkill";
 import Skills from "./Components/Skills";
 import Chat from "./Components/Chat";
+import { useRef } from "react";
 
 function App() {
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectRef = useRef(null);
+  const techStackRef = useRef(null);
+  const skillsRef = useRef(null);
+  const contactRef = useRef(null);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      <About />
+    <div ref={homeRef} className="App">
+      <Navbar
+        refs={{
+          homeRef,
+          aboutRef,
+          projectRef,
+          techStackRef,
+          skillsRef,
+          contactRef,
+        }}
+      />
+      <Home ref={homeRef} />
+      <About ref={aboutRef} />
       <Calender />
       <Stats />
-      <Project />
-      <TechSkill />
-      <Skills />
-      <Chat />
+      <Project ref={projectRef} />
+      <TechSkill ref={techStackRef} />
+      <Skills ref={skillsRef} />
+      <Chat ref={contactRef} />
     </div>
   );
 }

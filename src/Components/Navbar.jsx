@@ -10,7 +10,8 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-// import { Link as Scroll } from "react-scroll";
+import { NavLink, useLocation } from "react-router-dom";
+import React, { useEffect } from "react";
 
 const Links = [
   { to: "/", name: "Home" },
@@ -21,7 +22,7 @@ const Links = [
   { to: "/contact", name: "Contact" },
 ];
 
-const NavLink = ({ children }) => (
+const NavItem = ({ children }) => (
   <Link
     px={2}
     py={1}
@@ -40,12 +41,53 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
-export default function Navbar() {
+export default function Navbar({ refs }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log("location", location.pathname);
+    switch (location.pathname) {
+      case "/about":
+        scrollSmoothHandler(refs.aboutRef);
+        break;
+
+      case "/projects":
+        scrollSmoothHandler(refs.projectRef);
+        break;
+
+      case "/techstack":
+        scrollSmoothHandler(refs.techStackRef);
+        break;
+
+      case "/skills":
+        scrollSmoothHandler(refs.skillsRef);
+        break;
+
+      case "/contact":
+        scrollSmoothHandler(refs.contactRef);
+        break;
+
+      default:
+        scrollSmoothHandler(refs.homeRef);
+        break;
+    }
+  }, [location, refs]);
+
+  const scrollSmoothHandler = (ref) => {
+    console.log("Triggered.");
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
-      <Box bg={useColorModeValue("purple.300", "black.900")} px={4}>
+      <Box
+        bg={useColorModeValue("purple.300", "black.900")}
+        px={4}
+        pos="fixed"
+        zIndex={2}
+        w="100%"
+      >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -70,16 +112,10 @@ export default function Navbar() {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink key={link.name}>{link.name}</NavLink>
-                // <Scroll
-                //   to={link.to}
-                //   spy={true}
-                //   smooth={true}
-                //   offset={50}
-                //   duration={500}
-                // >
-                //   {link.name}
-                // </Scroll>
+                <NavLink to={link.to}>
+                  {" "}
+                  <NavItem key={link.name}>{link.name}</NavItem>
+                </NavLink>
               ))}
             </HStack>
           </HStack>
@@ -106,10 +142,13 @@ export default function Navbar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
+          <Box pb={4} display={{ md: "none" }} p="static">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink key={link.name}>{link.name}</NavLink>
+                <NavLink to={link.to}>
+                  {" "}
+                  <NavItem key={link.name}>{link.name}</NavItem>
+                </NavLink>
               ))}
             </Stack>
           </Box>
