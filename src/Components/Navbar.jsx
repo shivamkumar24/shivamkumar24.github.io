@@ -17,7 +17,7 @@ const Links = [
   { to: "/about", name: "About Me" },
   { to: "/projects", name: "Projects" },
   { to: "/techstack", name: "Tech-Stack" },
-  { to: "/myskills", name: "Skills" },
+  { to: "/skills", name: "Skills" },
   { to: "/contact", name: "Contact" },
 ];
 

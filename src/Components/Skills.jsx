@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const MySkills = () => {
+const Skills = () => {
   return (
     <Stack
       margin="auto"
@@ -293,4 +293,4 @@ const MySkills = () => {
   );
 };
 
-export default MySkills;
+export default Skills;

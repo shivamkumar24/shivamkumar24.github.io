@@ -5,7 +5,7 @@ import Calender from "./Components/Calender";
 import Stats from "./Components/Stats";
 import Project from "./Components/Project";
 import TechSkill from "./Components/TechSkill";
-import MySkills from "./Components/MySkills";
+import Skills from "./Components/Skills";
 import Chat from "./Components/Chat";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <Stats />
       <Project />
       <TechSkill />
-      <MySkills />
+      <Skills />
       <Chat />
     </div>
   );
