@@ -102,7 +102,7 @@ const Home = forwardRef((props, ref) => {
         </Box>
 
         <Image
-          src={property.imageUrl}
+          src={"Profile_Picture.jpg"}
           alt={property.imageAlt}
           borderRadius="50%"
           height={{ base: "225px", md: "320px" }}
