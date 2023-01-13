@@ -120,7 +120,7 @@ export default function Navbar({ refs }) {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            <a href="Shivam_Kumar_Resume.pdf" download>
+            <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
                 display={"inline-flex"}
                 fontSize={"md"}

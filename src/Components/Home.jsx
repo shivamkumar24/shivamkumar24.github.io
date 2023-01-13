@@ -39,7 +39,7 @@ const Home = forwardRef((props, ref) => {
           </Box>
 
           <Box margin="10px">
-            <a href="Shivam_Kumar_Resume.pdf" download>
+            <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
                 display={"inline-flex"}
                 fontSize={{ base: "sm", md: "md" }}
