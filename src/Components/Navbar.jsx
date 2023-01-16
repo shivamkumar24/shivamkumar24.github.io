@@ -8,6 +8,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Image,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { NavLink, useLocation } from "react-router-dom";
@@ -97,7 +98,7 @@ export default function Navbar({ refs }) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <Box
+            {/* <Box
               fontSize={{ base: "md", md: "30px" }}
               fontWeight="bold"
               fontStyle="italic"
@@ -105,7 +106,14 @@ export default function Navbar({ refs }) {
               color="red"
             >
               Shivam Kumar
-            </Box>
+            </Box> */}
+            <Image
+              objectFit="cover"
+              boxSize="100%"
+              width="125px"
+              height="50px"
+              src={"Logo.jpeg"}
+            />
             <HStack
               as={"nav"}
               spacing={4}

@@ -31,9 +31,9 @@ function App() {
       />
       <Home ref={homeRef} />
       <About ref={aboutRef} />
+      <Project ref={projectRef} />
       <Calender />
       <Stats />
-      <Project ref={projectRef} />
       <TechSkill ref={techStackRef} />
       <Skills ref={skillsRef} />
       <Chat ref={contactRef} />

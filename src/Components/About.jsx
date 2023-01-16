@@ -11,7 +11,7 @@ const About = forwardRef((props, ref) => {
           textAlign={{ base: "center" }}
           textDecoration="underline"
         >
-          Who I am
+          About me
         </Box>
         <Box
           width="90%"
@@ -48,14 +48,6 @@ const About = forwardRef((props, ref) => {
               growth and goals.
             </Box>
           </Box>
-        </Box>
-        <Box
-          fontWeight="bold"
-          fontSize={{ base: "22px", md: "45px" }}
-          textAlign={{ base: "center" }}
-          textDecoration="underline"
-        >
-          Github Activity
         </Box>
       </Box>
     </section>

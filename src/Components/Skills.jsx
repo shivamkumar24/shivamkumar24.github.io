@@ -160,7 +160,7 @@ const Skills = forwardRef((props, ref) => {
         </Grid>
 
         {/* Tech Skills */}
-        <Heading
+        {/* <Heading
           paddingLeft={{ base: "12px", md: "25px" }}
           textDecoration="underline"
         >
@@ -169,9 +169,9 @@ const Skills = forwardRef((props, ref) => {
         <Grid
           templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
           gap={{ base: "", md: "4" }}
-        >
-          {/* First Tech Skills */}
-          <GridItem>
+        > */}
+        {/* First Tech Skills */}
+        {/* <GridItem>
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -198,10 +198,10 @@ const Skills = forwardRef((props, ref) => {
                 Frontend
               </Heading>
             </Stack>
-          </GridItem>
+          </GridItem> */}
 
-          {/* Second Tech Skills */}
-          <GridItem>
+        {/* Second Tech Skills */}
+        {/* <GridItem>
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -228,10 +228,10 @@ const Skills = forwardRef((props, ref) => {
                 Backend
               </Heading>
             </Stack>
-          </GridItem>
+          </GridItem> */}
 
-          {/* Third Tech Skills */}
-          <GridItem>
+        {/* Third Tech Skills */}
+        {/* <GridItem>
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -258,10 +258,10 @@ const Skills = forwardRef((props, ref) => {
                 DSA
               </Heading>
             </Stack>
-          </GridItem>
+          </GridItem> */}
 
-          {/* Fourth Tech Skills */}
-          <GridItem>
+        {/* Fourth Tech Skills */}
+        {/* <GridItem>
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -288,8 +288,8 @@ const Skills = forwardRef((props, ref) => {
                 Project Management
               </Heading>
             </Stack>
-          </GridItem>
-        </Grid>
+          </GridItem> */}
+        {/* </Grid> */}
       </Stack>
     </section>
   );
