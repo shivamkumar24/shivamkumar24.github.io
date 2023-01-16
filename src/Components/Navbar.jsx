@@ -98,22 +98,18 @@ export default function Navbar({ refs }) {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            {/* <Box
-              fontSize={{ base: "md", md: "30px" }}
-              fontWeight="bold"
-              fontStyle="italic"
-              cursor="pointer"
-              color="red"
-            >
-              Shivam Kumar
-            </Box> */}
-            <Image
-              objectFit="cover"
-              boxSize="100%"
-              width="125px"
-              height="50px"
-              src={"Logo.jpeg"}
-            />
+            {/* Navbar Logo */}
+            <NavLink to="/">
+              <Image
+                objectFit="cover"
+                boxSize="100%"
+                width="125px"
+                height="50px"
+                src={"Logo.jpeg"}
+              />
+            </NavLink>
+
+            {/* Navbar items */}
             <HStack
               as={"nav"}
               spacing={4}
@@ -127,6 +123,8 @@ export default function Navbar({ refs }) {
               ))}
             </HStack>
           </HStack>
+
+          {/* Resume Button */}
           <Flex alignItems={"center"}>
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
