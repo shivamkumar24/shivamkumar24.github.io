@@ -34,7 +34,6 @@ const TechSkill = forwardRef((props, ref) => {
             lg: "repeat(4,1fr)",
           }}
           gap={8}
-          border="1px solid black"
         >
           {/* First Tech Stack */}
           <GridItem>
