@@ -15,7 +15,7 @@ const Skills = forwardRef((props, ref) => {
       <Stack
         margin="auto"
         backgroundColor="purple.300"
-        padding={{ base: "10px 1%", md: "10px 22%" }}
+        padding={{ base: "10px 1%", md: "10px", lg: "10px 22%" }}
       >
         <Box
           color="red.600"
@@ -35,7 +35,11 @@ const Skills = forwardRef((props, ref) => {
           Soft Skills
         </Heading>
         <Grid
-          templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
+          templateColumns={{
+            base: "repeat(2,1fr)",
+            md: "repeat(3, 1fr)",
+            lg: "repeat(4,1fr)",
+          }}
           gap={{ base: "", md: "4" }}
         >
           {/* First Soft Skills */}

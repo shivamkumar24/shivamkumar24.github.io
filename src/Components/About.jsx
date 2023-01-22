@@ -22,7 +22,7 @@ const About = forwardRef((props, ref) => {
           mb={{ base: "20px", md: "25px" }}
           justifyContent={{ base: "center", md: "space-around" }}
           alignItems={{ base: "center" }}
-          flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", md: "column", lg: "row" }}
         >
           <Image
             src="https://t3.ftcdn.net/jpg/00/79/32/70/240_F_79327071_ubG3dWNUwUeVFqALg55FLqGpJFgfnoRY.jpg"

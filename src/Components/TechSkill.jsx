@@ -15,7 +15,7 @@ const TechSkill = forwardRef((props, ref) => {
       <Stack
         margin="auto"
         backgroundColor="lavender"
-        padding={{ base: "10px 1%", md: "10px 22%" }}
+        padding={{ base: "10px 1%", md: "10px", lg: "10px 22%" }}
       >
         {/* Tech Stack */}
         <Box
@@ -28,8 +28,13 @@ const TechSkill = forwardRef((props, ref) => {
           Tech Stack
         </Box>
         <Grid
-          templateColumns={{ base: "repeat(2,1fr)", md: "repeat(4, 1fr)" }}
+          templateColumns={{
+            base: "repeat(2,1fr)",
+            md: "repeat(3, 1fr)",
+            lg: "repeat(4,1fr)",
+          }}
           gap={8}
+          border="1px solid black"
         >
           {/* First Tech Stack */}
           <GridItem>

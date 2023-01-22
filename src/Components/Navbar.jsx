@@ -35,6 +35,7 @@ const NavItem = ({ children }) => (
     }}
     color="black"
     fontWeight="bold"
+    textAlign="center"
     fontSize="18px"
     href={"/"}
   >

@@ -28,7 +28,11 @@ const Project = forwardRef((props, ref) => {
           Some projects I've Built
         </Box>
         <Grid
-          templateColumns={{ sm: "repeat(1,1fr)", md: "repeat(3, 1fr)" }}
+          templateColumns={{
+            sm: "repeat(1,1fr)",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3,1fr)",
+          }}
           gap={8}
         >
           {/* First Project */}
