@@ -360,6 +360,114 @@ const Project = forwardRef((props, ref) => {
               </Stack>
             </Stack>
           </GridItem>
+
+          {/* Fourth Project */}
+          <GridItem>
+            <Stack
+              borderWidth="1px"
+              borderRadius="lg"
+              m="auto"
+              w={{ sm: "90%", md: "90%" }}
+              height="auto"
+              direction={{ base: "column", md: "column" }}
+              bg={useColorModeValue("cyan", "gray.900")}
+              boxShadow={"xl"}
+              padding={4}
+              margin={4}
+              textAlign="center"
+            >
+              <Flex flex={1} bg="blue.200">
+                <Image
+                  objectFit="cover"
+                  boxSize="100%"
+                  src={"trademart.jpeg"}
+                />
+              </Flex>
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                p={1}
+                pt={2}
+              >
+                <Heading fontSize={"xl"} fontFamily={"body"}>
+                  TradeMart.com
+                </Heading>
+
+                <Text
+                  textAlign={"center"}
+                  color={useColorModeValue("gray.700", "gray.400")}
+                  px={3}
+                >
+                  TradeMart is clone website of IndiaMart. IndiaMart Indian
+                  e-commerce company that provides B2B and customer to customer
+                  sales services via its web portal.
+                </Text>
+
+                <Stack
+                  display="flex"
+                  flexDirection={{ base: "column", md: "row" }}
+                >
+                  <Text fontWeight={"bold"}>
+                    <span style={{ color: "red", fontWeight: "600" }}>
+                      Tech Stack:
+                    </span>{" "}
+                    React | React-Router | React-Redux | React-thunk | Firebase
+                    | JSON
+                  </Text>
+                </Stack>
+
+                <Text>A group project executed in 5 days.</Text>
+
+                <Stack
+                  width={"70%"}
+                  m="auto"
+                  mt={"2rem"}
+                  direction={"row"}
+                  padding={2}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Link
+                    href="https://github.com/jithstephen13/TradeMart"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      _focus={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      GitHub
+                    </Button>
+                  </Link>
+                  <Link href="https://trademart.netlify.app/" target={"_blank"}>
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      bg={"blue.400"}
+                      color={"white"}
+                      boxShadow={
+                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                      }
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      _focus={{
+                        bg: "blue.500",
+                      }}
+                    >
+                      Demo
+                    </Button>
+                  </Link>
+                </Stack>
+              </Stack>
+            </Stack>
+          </GridItem>
         </Grid>
       </Stack>
     </section>
