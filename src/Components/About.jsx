@@ -31,7 +31,7 @@ const About = forwardRef((props, ref) => {
             height={{ base: "200px", md: "300px" }}
             width={{ base: "200px", md: "500px" }}
           />
-          <Box margin="20px">
+          <Box margin="20px" id="user-detail-intro">
             <Box
               fontSize={{ base: "15px", md: "22px" }}
               mb="8px"

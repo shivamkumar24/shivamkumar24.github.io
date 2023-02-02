@@ -129,6 +129,7 @@ export default function Navbar({ refs }) {
           <Flex alignItems={"center"}>
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
+                id="resume-button-1"
                 className="nav-link resume"
                 display={"inline-flex"}
                 fontSize={"md"}

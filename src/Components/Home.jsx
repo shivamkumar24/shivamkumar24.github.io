@@ -26,7 +26,11 @@ const Home = forwardRef((props, ref) => {
             Hi, I am
           </Box>
 
-          <Box fontWeight="bold" fontSize={{ base: "30px", md: "45px" }}>
+          <Box
+            id="user-detail-name"
+            fontWeight="bold"
+            fontSize={{ base: "30px", md: "45px" }}
+          >
             Shivam Kumar
           </Box>
 
@@ -41,6 +45,7 @@ const Home = forwardRef((props, ref) => {
           <Box margin="10px">
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
+                id="resume-button-2"
                 display={"inline-flex"}
                 fontSize={{ base: "sm", md: "md" }}
                 fontWeight={"bold"}
