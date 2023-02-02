@@ -105,6 +105,7 @@ const Home = forwardRef((props, ref) => {
           src={"Profile_Picture.jpg"}
           alt={property.imageAlt}
           borderRadius="50%"
+          className="home-img"
           height={{ base: "225px", md: "320px" }}
           width={{ base: "225px", md: "320px" }}
         />

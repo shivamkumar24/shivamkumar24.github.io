@@ -6,6 +6,7 @@ const Stats = () => {
       <div style={{ width: "40%", margin: "auto" }}>
         <a href="https://github.com/shivamkumar24">
           <img
+            id="github-streak-stats"
             alt=""
             align="left"
             src="https://github-readme-streak-stats.herokuapp.com/?user=shivamkumar24"
@@ -24,6 +25,7 @@ const Stats = () => {
       >
         <a href="https://github.com/shivamkumar24">
           <img
+            id="github-top-langs"
             alt=""
             align="center"
             src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivamkumar24" //launguages
@@ -31,6 +33,7 @@ const Stats = () => {
         </a>
         <a href="https://github.com/shivamkumar24">
           <img
+            id="github-stats-card"
             alt=""
             align="left"
             src="https://github-readme-stats.vercel.app/api?username=shivamkumar24&count_private=true&show_icons=true" //stats

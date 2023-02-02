@@ -43,7 +43,7 @@ const Skills = forwardRef((props, ref) => {
           gap={{ base: "", md: "4" }}
         >
           {/* First Soft Skills */}
-          <GridItem>
+          <GridItem className="skills-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -58,6 +58,7 @@ const Skills = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Image
+                className="skills-card-img"
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
@@ -66,14 +67,19 @@ const Skills = forwardRef((props, ref) => {
                 }
               />
 
-              <Heading fontSize={"xl"} fontFamily={"body"} color="white">
+              <Heading
+                className="skills-card-name"
+                fontSize={"xl"}
+                fontFamily={"body"}
+                color="white"
+              >
                 Collaborative
               </Heading>
             </Stack>
           </GridItem>
 
           {/* Second Soft Skills */}
-          <GridItem>
+          <GridItem className="skills-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -88,6 +94,7 @@ const Skills = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Image
+                className="skills-card-img"
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
@@ -96,14 +103,19 @@ const Skills = forwardRef((props, ref) => {
                 }
               />
 
-              <Heading fontSize={"xl"} fontFamily={"body"} color="white">
+              <Heading
+                className="skills-card-name"
+                fontSize={"xl"}
+                fontFamily={"body"}
+                color="white"
+              >
                 Creative Thinking
               </Heading>
             </Stack>
           </GridItem>
 
           {/* Third Soft Skills */}
-          <GridItem>
+          <GridItem className="skills-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -118,6 +130,7 @@ const Skills = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Image
+                className="skills-card-img"
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
@@ -126,14 +139,19 @@ const Skills = forwardRef((props, ref) => {
                 }
               />
 
-              <Heading fontSize={"xl"} fontFamily={"body"} color="white">
+              <Heading
+                className="skills-card-name"
+                fontSize={"xl"}
+                fontFamily={"body"}
+                color="white"
+              >
                 Problem Solving
               </Heading>
             </Stack>
           </GridItem>
 
           {/* Fourth Soft Skills */}
-          <GridItem>
+          <GridItem className="skills-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -148,6 +166,7 @@ const Skills = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Image
+                className="skills-card-img"
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
@@ -156,7 +175,12 @@ const Skills = forwardRef((props, ref) => {
                 }
               />
 
-              <Heading fontSize={"xl"} fontFamily={"body"} color="white">
+              <Heading
+                className="skills-card-name"
+                fontSize={"xl"}
+                fontFamily={"body"}
+                color="white"
+              >
                 Time Management
               </Heading>
             </Stack>

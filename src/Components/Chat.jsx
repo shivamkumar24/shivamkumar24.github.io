@@ -57,6 +57,7 @@ const Chat = forwardRef((props, ref) => {
                     <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
+                          id="contact-phone"
                           size="md"
                           height="48px"
                           width="auto"
@@ -68,6 +69,7 @@ const Chat = forwardRef((props, ref) => {
                           +91-9355228666
                         </Button>
                         <Button
+                          id="contact-email"
                           size="md"
                           height="48px"
                           width="auto"
@@ -99,7 +101,10 @@ const Chat = forwardRef((props, ref) => {
                       px={5}
                       alignItems="flex-start"
                     >
-                      <Link href="https://www.linkedin.com/in/shivamkumar24/">
+                      <Link
+                        id="contact-linkedin"
+                        href="https://www.linkedin.com/in/shivamkumar24/"
+                      >
                         <IconButton
                           aria-label="linkedin"
                           variant="ghost"
@@ -110,7 +115,10 @@ const Chat = forwardRef((props, ref) => {
                         />
                       </Link>
 
-                      <Link href="https://github.com/shivamkumar24">
+                      <Link
+                        id="contact-github"
+                        href="https://github.com/shivamkumar24"
+                      >
                         <IconButton
                           aria-label="github"
                           variant="ghost"

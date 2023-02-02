@@ -36,7 +36,7 @@ const Project = forwardRef((props, ref) => {
           gap={6}
         >
           {/* First Project */}
-          <GridItem>
+          <GridItem className="project-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -65,11 +65,16 @@ const Project = forwardRef((props, ref) => {
                 p={1}
                 pt={2}
               >
-                <Heading fontSize={"xl"} fontFamily={"body"}>
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
                   TradeMart.com
                 </Heading>
 
                 <Text
+                  className="project-description"
                   textAlign={"center"}
                   color={useColorModeValue("gray.700", "gray.400")}
                   px={3}
@@ -83,7 +88,7 @@ const Project = forwardRef((props, ref) => {
                   display="flex"
                   flexDirection={{ base: "column", md: "row" }}
                 >
-                  <Text fontWeight={"bold"}>
+                  <Text fontWeight={"bold"} className="project-tech-stack">
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
@@ -104,6 +109,7 @@ const Project = forwardRef((props, ref) => {
                   alignItems={"center"}
                 >
                   <Link
+                    className="project-github-link"
                     href="https://github.com/jithstephen13/TradeMart"
                     target={"_blank"}
                   >
@@ -118,7 +124,11 @@ const Project = forwardRef((props, ref) => {
                       GitHub
                     </Button>
                   </Link>
-                  <Link href="https://trademart.netlify.app/" target={"_blank"}>
+                  <Link
+                    className="project-deployed-link"
+                    href="https://trademart.netlify.app/"
+                    target={"_blank"}
+                  >
                     <Button
                       flex={1}
                       fontSize={"sm"}
@@ -144,7 +154,7 @@ const Project = forwardRef((props, ref) => {
           </GridItem>
 
           {/* Second Project */}
-          <GridItem>
+          <GridItem className="project-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -173,11 +183,16 @@ const Project = forwardRef((props, ref) => {
                 p={1}
                 pt={2}
               >
-                <Heading fontSize={"xl"} fontFamily={"body"}>
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
                   Beautybebo.com - Clone
                 </Heading>
 
                 <Text
+                  className="project-description"
                   textAlign={"center"}
                   color={useColorModeValue("gray.700", "gray.400")}
                   px={3}
@@ -191,7 +206,7 @@ const Project = forwardRef((props, ref) => {
                   display="flex"
                   flexDirection={{ base: "column", md: "row" }}
                 >
-                  <Text fontWeight={"bold"}>
+                  <Text fontWeight={"bold"} className="project-tech-stack">
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
@@ -211,6 +226,7 @@ const Project = forwardRef((props, ref) => {
                   alignItems={"center"}
                 >
                   <Link
+                    className="project-github-link"
                     href="https://github.com/shivamkumar24/Beautybebo.com-Clone"
                     target={"_blank"}
                   >
@@ -226,6 +242,7 @@ const Project = forwardRef((props, ref) => {
                     </Button>
                   </Link>
                   <Link
+                    className="project-deployed-link"
                     href="https://beautybebo-com-clone-jdmb.vercel.app/"
                     target={"_blank"}
                   >
@@ -254,7 +271,7 @@ const Project = forwardRef((props, ref) => {
           </GridItem>
 
           {/* Third Project */}
-          <GridItem>
+          <GridItem className="project-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -283,11 +300,16 @@ const Project = forwardRef((props, ref) => {
                 p={1}
                 pt={2}
               >
-                <Heading fontSize={"xl"} fontFamily={"body"}>
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
                   SugarCosmetics.com - Clone
                 </Heading>
 
                 <Text
+                  className="project-description"
                   textAlign={"center"}
                   color={useColorModeValue("gray.700", "gray.400")}
                   px={3}
@@ -301,7 +323,7 @@ const Project = forwardRef((props, ref) => {
                   display="flex"
                   flexDirection={{ base: "column", md: "row" }}
                 >
-                  <Text fontWeight={"bold"}>
+                  <Text className="project-tech-stack" fontWeight={"bold"}>
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
@@ -321,6 +343,7 @@ const Project = forwardRef((props, ref) => {
                   alignItems={"center"}
                 >
                   <Link
+                    className="project-github-link"
                     href="https://github.com/shivamkumar24/SugarCosmetics.com-Clone"
                     target={"_blank"}
                   >
@@ -336,6 +359,7 @@ const Project = forwardRef((props, ref) => {
                     </Button>
                   </Link>
                   <Link
+                    className="project-deployed-link"
                     href="https://effortless-strudel-bc1dac.netlify.app/"
                     target={"_blank"}
                   >
@@ -364,7 +388,7 @@ const Project = forwardRef((props, ref) => {
           </GridItem>
 
           {/* Fourth Project */}
-          <GridItem>
+          <GridItem className="project-card">
             <Stack
               borderWidth="1px"
               borderRadius="lg"
@@ -389,11 +413,16 @@ const Project = forwardRef((props, ref) => {
                 p={1}
                 pt={2}
               >
-                <Heading fontSize={"xl"} fontFamily={"body"}>
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
                   Myntra.com - Clone
                 </Heading>
 
                 <Text
+                  className="project-description"
                   textAlign={"center"}
                   color={useColorModeValue("gray.700", "gray.400")}
                   px={3}
@@ -407,7 +436,7 @@ const Project = forwardRef((props, ref) => {
                   display="flex"
                   flexDirection={{ base: "column", md: "row" }}
                 >
-                  <Text fontWeight={"bold"}>
+                  <Text className="project-tech-stack" fontWeight={"bold"}>
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
@@ -427,6 +456,7 @@ const Project = forwardRef((props, ref) => {
                   alignItems={"center"}
                 >
                   <Link
+                    className="project-github-link"
                     href="https://github.com/shivamkumar24/Myntra_Clone"
                     target={"_blank"}
                   >
@@ -442,6 +472,7 @@ const Project = forwardRef((props, ref) => {
                     </Button>
                   </Link>
                   <Link
+                    className="project-deployed-link"
                     href="https://idyllic-begonia-67c760.netlify.app/"
                     target={"_blank"}
                   >
