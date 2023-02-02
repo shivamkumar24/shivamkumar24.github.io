@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 
 const About = forwardRef((props, ref) => {
   return (
-    <section ref={ref}>
+    <section ref={ref} id="about" class="about section">
       <Box>
         <Box
           fontWeight="bold"

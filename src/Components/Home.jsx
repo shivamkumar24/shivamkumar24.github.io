@@ -10,7 +10,7 @@ const Home = forwardRef((props, ref) => {
   };
 
   return (
-    <section ref={ref}>
+    <section ref={ref} id="home">
       <Box
         display="flex"
         backgroundColor="whatsapp.200"

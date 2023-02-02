@@ -15,12 +15,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
 
 const Links = [
-  { to: "/", name: "Home" },
-  { to: "/about", name: "About Me" },
-  { to: "/projects", name: "Projects" },
-  { to: "/techstack", name: "Tech-Stack" },
-  { to: "/skills", name: "Skills" },
-  { to: "/contact", name: "Contact" },
+  { to: "/", name: "Home", class: "nav-link home" },
+  { to: "/about", name: "About Me", class: "nav-link about" },
+  { to: "/projects", name: "Projects", class: "nav-link projects" },
+  { to: "/techstack", name: "Tech-Stack", class: "nav-link techstack" },
+  { to: "/skills", name: "Skills", class: "nav-link skills" },
+  { to: "/contact", name: "Contact", class: "nav-link contact" },
 ];
 
 const NavItem = ({ children }) => (
@@ -82,7 +82,7 @@ export default function Navbar({ refs }) {
   };
 
   return (
-    <>
+    <div id="nav-menu">
       <Box
         bg={useColorModeValue("purple.300", "black.900")}
         px={4}
@@ -117,7 +117,7 @@ export default function Navbar({ refs }) {
               display={{ base: "none", md: "flex" }}
             >
               {Links.map((link) => (
-                <NavLink to={link.to}>
+                <NavLink to={link.to} className={link.class}>
                   {" "}
                   <NavItem key={link.name}>{link.name}</NavItem>
                 </NavLink>
@@ -129,6 +129,7 @@ export default function Navbar({ refs }) {
           <Flex alignItems={"center"}>
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
+                className="nav-link resume"
                 display={"inline-flex"}
                 fontSize={"md"}
                 fontWeight={"bold"}
@@ -152,7 +153,7 @@ export default function Navbar({ refs }) {
           <Box pb={4} display={{ md: "none" }} p="static">
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
-                <NavLink to={link.to}>
+                <NavLink to={link.to} className={link.class}>
                   {" "}
                   <NavItem key={link.name}>{link.name}</NavItem>
                 </NavLink>
@@ -163,6 +164,6 @@ export default function Navbar({ refs }) {
       </Box>
 
       {/* <Box p={4}>Main Content Here</Box> */}
-    </>
+    </div>
   );
 }

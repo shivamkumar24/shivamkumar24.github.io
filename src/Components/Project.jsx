@@ -15,7 +15,7 @@ import {
 
 const Project = forwardRef((props, ref) => {
   return (
-    <section ref={ref}>
+    <section ref={ref} id="projects">
       <Stack margin="auto" backgroundColor="cornflowerblue">
         {/* Projects */}
         <Box

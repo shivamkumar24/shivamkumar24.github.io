@@ -24,7 +24,7 @@ import { BsGithub, BsPerson, BsLinkedin } from "react-icons/bs";
 
 const Chat = forwardRef((props, ref) => {
   return (
-    <section ref={ref}>
+    <section ref={ref} id="contact">
       <Container
         bg="#9DC4FB"
         maxW="full"
