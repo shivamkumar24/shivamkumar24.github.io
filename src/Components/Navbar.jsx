@@ -126,7 +126,15 @@ export default function Navbar({ refs }) {
           </HStack>
 
           {/* Resume Button */}
-          <Flex alignItems={"center"}>
+          <Box
+            alignItems={"center"}
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
+                "_blank"
+              );
+            }}
+          >
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
                 id="resume-button-1"
@@ -147,7 +155,7 @@ export default function Navbar({ refs }) {
                 Resume
               </Button>
             </a>
-          </Flex>
+          </Box>
         </Flex>
 
         {isOpen ? (

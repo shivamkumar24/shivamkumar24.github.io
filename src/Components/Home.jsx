@@ -42,7 +42,15 @@ const Home = forwardRef((props, ref) => {
             Full Stack Web Developer
           </Box>
 
-          <Box margin="10px">
+          <Box
+            margin="10px"
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
+                "_blank"
+              );
+            }}
+          >
             <a href="Shivam-Kumar-Resume.pdf" download>
               <Button
                 id="resume-button-2"
