@@ -66,7 +66,7 @@ const Project = forwardRef((props, ref) => {
                   fontSize={"xl"}
                   fontFamily={"body"}
                 >
-                  doorstep.com
+                  DoorStep.com
                 </Heading>
 
                 <Text
@@ -89,7 +89,7 @@ const Project = forwardRef((props, ref) => {
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
-                    NodeJS | ExpressJS | MongoDB | JWT-Authentication | Bcrypt
+                    NodeJS | ExpressJS | MongoDB | JWT-Authentication | Bcrypt |
                     React | React-Router | React-Redux | React-thunk | ChakraUI
                   </Text>
                 </Stack>
