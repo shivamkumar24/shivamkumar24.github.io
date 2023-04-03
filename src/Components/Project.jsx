@@ -51,6 +51,121 @@ const Project = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Flex flex={1} bg="blue.200">
+                <Image objectFit="cover" boxSize="100%" src={"doorstep.jpeg"} />
+              </Flex>
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                p={1}
+                pt={2}
+              >
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
+                  doorstep.com
+                </Heading>
+
+                <Text
+                  className="project-description"
+                  textAlign={"center"}
+                  color={useColorModeValue("gray.700", "gray.400")}
+                  px={3}
+                >
+                  DoorStep.com is clone of nearbuy.com MERN Stack web
+                  application that allows you to buy voucher and coupons. It has
+                  a variety of categories, just visit the product listing page
+                  and you will see all the services near your location.
+                </Text>
+
+                <Stack
+                  display="flex"
+                  flexDirection={{ base: "column", md: "row" }}
+                >
+                  <Text fontWeight={"bold"} className="project-tech-stack">
+                    <span style={{ color: "red", fontWeight: "600" }}>
+                      Tech Stack:
+                    </span>{" "}
+                    NodeJS | ExpressJS | MongoDB | JWT-Authentication | Bcrypt
+                    React | React-Router | React-Redux | React-thunk | ChakraUI
+                  </Text>
+                </Stack>
+
+                <Text>A group project executed in 5 days.</Text>
+
+                <Stack
+                  width={"70%"}
+                  m="auto"
+                  mt={"2rem"}
+                  direction={"row"}
+                  padding={2}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Link
+                    className="project-github-link"
+                    href="https://github.com/KaustubhN12/dizzy-stitch-9009"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      _focus={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      GitHub
+                    </Button>
+                  </Link>
+                  <Link
+                    className="project-deployed-link"
+                    href="https://doorstep-iota.vercel.app/"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      bg={"blue.400"}
+                      color={"white"}
+                      boxShadow={
+                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                      }
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      _focus={{
+                        bg: "blue.500",
+                      }}
+                    >
+                      Demo
+                    </Button>
+                  </Link>
+                </Stack>
+              </Stack>
+            </Stack>
+          </GridItem>
+
+          {/* Second Project */}
+          <GridItem className="project-card">
+            <Stack
+              borderWidth="1px"
+              borderRadius="lg"
+              m="auto"
+              w={{ sm: "90%", md: "90%" }}
+              height="auto"
+              direction={{ base: "column", md: "column" }}
+              bg={useColorModeValue("cyan", "gray.900")}
+              boxShadow={"xl"}
+              padding={4}
+              margin={4}
+              textAlign="center"
+            >
+              <Flex flex={1} bg="blue.200">
                 <Image
                   objectFit="cover"
                   boxSize="100%"
@@ -92,7 +207,8 @@ const Project = forwardRef((props, ref) => {
                     <span style={{ color: "red", fontWeight: "600" }}>
                       Tech Stack:
                     </span>{" "}
-                    React | React-Router | React-Redux | React-thunk | JSON
+                    React | React-Router | React-Redux | React-thunk | JSON |
+                    ChakraUI
                   </Text>
                 </Stack>
 
@@ -152,7 +268,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Second Project */}
+          {/* Third Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -270,7 +386,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Third Project */}
+          {/* Fourth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -387,7 +503,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Fourth Project */}
+          {/* Fifth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -504,7 +620,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Fifth Project */}
+          {/* Sixth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
