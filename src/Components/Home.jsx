@@ -51,7 +51,7 @@ const Home = forwardRef((props, ref) => {
               );
             }}
           >
-            <a href="Shivam-Kumar-Resume.pdf" download>
+            <a href="Shivam-Kumar-Resume.pdf" id="resume-link-2" download>
               <Button
                 id="resume-button-2"
                 display={"inline-flex"}

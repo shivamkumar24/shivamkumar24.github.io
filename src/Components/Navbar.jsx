@@ -136,7 +136,7 @@ export default function Navbar({ refs }) {
               );
             }}
           >
-            <a href="Shivam-Kumar-Resume.pdf" download>
+            <a href="Shivam-Kumar-Resume.pdf" id="resume-link-1" download>
               <Button
                 id="resume-button-1"
                 className="nav-link resume"
