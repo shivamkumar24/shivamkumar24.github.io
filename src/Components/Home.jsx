@@ -43,12 +43,12 @@ const Home = forwardRef((props, ref) => {
 
           <Box
             margin="10px"
-            // onClick={() => {
-            //   window.open(
-            //     "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
-            //     "_blank"
-            //   );
-            // }}
+            onClick={() => {
+              window.open(
+                "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
+                "_blank"
+              );
+            }}
           >
             <Button
               id="resume-button-2"
@@ -61,22 +61,8 @@ const Home = forwardRef((props, ref) => {
               _hover={{
                 bg: "red.800",
               }}
-              // onClick={() =>
-              //   (window.location.href =
-              //     "https://drive.google.com/uc?export=download&id=1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq")
-              // }
             >
-              <a
-                // href="Shivam-Kumar-Resume.pdf"
-                href="https://drive.google.com/uc?export=download&id=1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq"
-                id="resume-link-2"
-                // download="Shivam-Kumar-Resume"
-                onClick={() => {
-                  window.open(
-                    "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing"
-                  );
-                }}
-              >
+              <a href="Shivam-Kumar-Resume.pdf" id="resume-link-2" download>
                 Resume
               </a>
             </Button>
