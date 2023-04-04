@@ -127,35 +127,33 @@ export default function Navbar({ refs }) {
           </HStack>
 
           {/* Resume Button */}
-          <Box
-            alignItems={"center"}
-            onClick={() => {
-              window.open(
-                "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
-                "_blank"
-              );
-            }}
-          >
-            <a href="Shivam-Kumar-Resume.pdf" id="resume-link-1" download>
-              <Button
-                id="resume-button-1"
-                className="nav-link resume"
-                display={"inline-flex"}
-                fontSize={"md"}
-                fontWeight={"bold"}
-                letterSpacing="2px"
-                color={"white"}
-                bg={"red.600"}
-                href={"#"}
-                _hover={{
-                  bg: "white",
-                  color: "red.800",
-                  border: "1px solid red",
-                }}
-              >
+          <Box alignItems={"center"}>
+            <Button
+              id="resume-button-1"
+              className="nav-link resume"
+              display={"inline-flex"}
+              fontSize={"md"}
+              fontWeight={"bold"}
+              letterSpacing="2px"
+              color={"white"}
+              bg={"red.600"}
+              href={"#"}
+              _hover={{
+                bg: "white",
+                color: "red.800",
+                border: "1px solid red",
+              }}
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing",
+                  "_blank"
+                );
+              }}
+            >
+              <a href="Shivam-Kumar-Resume.pdf" id="resume-link-1" download>
                 Resume
-              </Button>
-            </a>
+              </a>
+            </Button>
           </Box>
         </Flex>
 
