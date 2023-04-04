@@ -61,15 +61,21 @@ const Home = forwardRef((props, ref) => {
               _hover={{
                 bg: "red.800",
               }}
-              onClick={() =>
-                (window.location.href =
-                  "https://drive.google.com/uc?export=download&id=1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq")
-              }
+              // onClick={() =>
+              //   (window.location.href =
+              //     "https://drive.google.com/uc?export=download&id=1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq")
+              // }
             >
               <a
-                href="Shivam-Kumar-Resume.pdf"
+                // href="Shivam-Kumar-Resume.pdf"
+                href="https://drive.google.com/uc?export=download&id=1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq"
                 id="resume-link-2"
-                download="Shivam-Kumar-Resume"
+                // download="Shivam-Kumar-Resume"
+                onClick={() => {
+                  window.open(
+                    "https://drive.google.com/file/d/1C3_YArb8NUMfjF8Q_lNbrLNmMRf7K1tq/view?usp=sharing"
+                  );
+                }}
               >
                 Resume
               </a>
