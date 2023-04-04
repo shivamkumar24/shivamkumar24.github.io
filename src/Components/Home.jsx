@@ -16,7 +16,6 @@ const Home = forwardRef((props, ref) => {
         backgroundColor="whatsapp.200"
         pt={{ base: "45px", md: "80px" }}
         pb={{ base: "20px" }}
-        // mt={{ base: "3px", md: "5px" }}
         justifyContent={{ base: "center", md: "space-around" }}
         alignItems={{ base: "center" }}
         flexDirection={{ base: "column", md: "row" }}
@@ -51,26 +50,29 @@ const Home = forwardRef((props, ref) => {
               );
             }}
           >
-            <a href="Shivam-Kumar-Resume.pdf" id="resume-link-2" download>
-              <Button
-                id="resume-button-2"
-                display={"inline-flex"}
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight={"bold"}
-                letterSpacing="2px"
-                color={"white"}
-                bg={"red"}
-                _hover={{
-                  bg: "red.800",
-                }}
+            <Button
+              id="resume-button-2"
+              display={"inline-flex"}
+              fontSize={{ base: "sm", md: "md" }}
+              fontWeight={"bold"}
+              letterSpacing="2px"
+              color={"white"}
+              bg={"red"}
+              _hover={{
+                bg: "red.800",
+              }}
+            >
+              <a
+                href="Shivam-Kumar-Resume.pdf"
+                id="resume-link-2"
+                download="Shivam-Kumar-Resume"
               >
                 Resume
-              </Button>
-            </a>
+              </a>
+            </Button>
           </Box>
 
           {/* Social Icons */}
-
           <HStack
             mt={{ lg: 5, md: 5 }}
             spacing={5}
@@ -99,7 +101,6 @@ const Home = forwardRef((props, ref) => {
               />
             </Link>
 
-            {/* <Link href="shivam2432000@gmail.com"> */}
             <a href="mailto:shivam2432000@gmail.com">
               <IconButton
                 aria-label="discord"
@@ -110,7 +111,6 @@ const Home = forwardRef((props, ref) => {
                 icon={<MdEmail size="28px" />}
               />
             </a>
-            {/* </Link> */}
           </HStack>
         </Box>
 
