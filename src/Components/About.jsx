@@ -42,7 +42,8 @@ const About = forwardRef((props, ref) => {
             </Box>
             <Box fontSize={{ base: "12px", md: "18px" }} mb="8px">
               I am a passionate and self-motivated Aspiring Full-Stack Web
-              Developer. Seeking challenging oppurtunities to make the best use
+              Developer. I can build websites by using MERN Stack and
+              JavsScript. Seeking challenging oppurtunities to make the best use
               of my abilities and knowledge to develop both my professional and
               interpersonal skills, along with fulfilling the organization's
               growth and goals.

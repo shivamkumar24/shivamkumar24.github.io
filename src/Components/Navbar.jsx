@@ -82,13 +82,14 @@ export default function Navbar({ refs }) {
   };
 
   return (
-    <div id="nav-menu">
+    <div>
       <Box
         bg={useColorModeValue("purple.300", "black.900")}
         px={4}
         pos="fixed"
         zIndex={2}
         w="100%"
+        id="nav-menu"
       >
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
