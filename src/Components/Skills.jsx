@@ -98,9 +98,7 @@ const Skills = forwardRef((props, ref) => {
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
-                src={
-                  "https://abhijitnr.github.io/static/media/creativity1.445675a0a00c2757a1d6.png"
-                }
+                src={"creative.png"}
               />
 
               <Heading
@@ -134,9 +132,7 @@ const Skills = forwardRef((props, ref) => {
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
-                src={
-                  "https://abhijitnr.github.io/static/media/problemSolv.ddf49384f01d0b6de6c0.png"
-                }
+                src={"problem.png"}
               />
 
               <Heading
@@ -170,9 +166,7 @@ const Skills = forwardRef((props, ref) => {
                 width={{ base: "70px", md: "100px" }}
                 height="130px"
                 margin="2px 18%"
-                src={
-                  "https://abhijitnr.github.io/static/media/timeManage.4644a4b2b8ed5f538eec.png"
-                }
+                src={"time.png"}
               />
 
               <Heading
