@@ -105,7 +105,7 @@ export default function Navbar({ refs }) {
               <Image
                 objectFit="cover"
                 boxSize="100%"
-                width="125px"
+                width={{ sm: "65px", md: "125px" }}
                 height="50px"
                 src={"Logo.jpeg"}
               />
