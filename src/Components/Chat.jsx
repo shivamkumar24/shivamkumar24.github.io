@@ -17,12 +17,56 @@ import {
   InputLeftElement,
   Textarea,
   Link,
+  useToast,
 } from "@chakra-ui/react";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 import { BsGithub, BsPerson, BsLinkedin } from "react-icons/bs";
 
+const initialValue = {
+  name: "",
+  email: "",
+  message: "",
+};
+
 const Chat = forwardRef((props, ref) => {
+  const toast = useToast();
+  const [emailData, setEmailData] = useState(initialValue);
+
+  const setEmail = (e) => {
+    setEmailData({ ...emailData, [e.target.name]: e.target.value });
+  };
+
+  const SendMail = () => {
+    emailjs
+      .send(
+        "service_ftarydb",
+        "template_gt44zej",
+        emailData,
+        "5zH2P1SlQ5i4P9vOG"
+      )
+      .then((res) => {
+        toast({
+          title: "Email Sended",
+          description: "E-mail Sent's Successfully.",
+          status: "success",
+          duration: 1500,
+          isClosable: true,
+        });
+      })
+      .catch((err) => {
+        toast({
+          title: "Something Wrong",
+          description: "Something goes wrong please check console.",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+        console.log("EmailSendError: ", err);
+      });
+  };
+
   return (
     <section ref={ref} id="contact">
       <Container
@@ -157,7 +201,12 @@ const Chat = forwardRef((props, ref) => {
                               pointerEvents="none"
                               children={<BsPerson color="gray.800" />}
                             />
-                            <Input type="text" size="md" />
+                            <Input
+                              type="text"
+                              size="md"
+                              name="name"
+                              onChange={(e) => setEmail(e)}
+                            />
                           </InputGroup>
                         </FormControl>
                         <FormControl id="mail">
@@ -167,7 +216,12 @@ const Chat = forwardRef((props, ref) => {
                               pointerEvents="none"
                               children={<MdOutlineEmail color="gray.800" />}
                             />
-                            <Input type="email" size="md" />
+                            <Input
+                              type="email"
+                              size="md"
+                              name="email"
+                              onChange={(e) => setEmail(e)}
+                            />
                           </InputGroup>
                         </FormControl>
                         <FormControl id="message">
@@ -178,6 +232,8 @@ const Chat = forwardRef((props, ref) => {
                               borderRadius: "gray.300",
                             }}
                             placeholder="message"
+                            name="message"
+                            onChange={(e) => setEmail(e)}
                           />
                         </FormControl>
                         <FormControl id="sendbutton" float="right">
@@ -186,6 +242,7 @@ const Chat = forwardRef((props, ref) => {
                             bg="#0D74FF"
                             color="white"
                             _hover={{}}
+                            onClick={SendMail}
                           >
                             Send Message
                           </Button>
