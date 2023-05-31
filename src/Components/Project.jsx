@@ -522,6 +522,118 @@ const Project = forwardRef((props, ref) => {
               textAlign="center"
             >
               <Flex flex={1} bg="blue.200">
+                <Image objectFit="cover" boxSize="100%" src={"notebook.jpeg"} />
+              </Flex>
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                p={1}
+                pt={2}
+              >
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
+                  NoteBook
+                </Heading>
+
+                <Text
+                  className="project-description"
+                  textAlign={"center"}
+                  color={useColorModeValue("gray.700", "gray.400")}
+                  px={3}
+                >
+                  NoteBook is a notes application. That is maintain your daily
+                  life note. it works like sticky note.
+                </Text>
+
+                <Stack
+                  display="flex"
+                  flexDirection={{ base: "column", md: "row" }}
+                >
+                  <Text fontWeight={"bold"} className="project-tech-stack">
+                    <span style={{ color: "red", fontWeight: "600" }}>
+                      Tech Stack:
+                    </span>{" "}
+                    React | React-Router | React-Redux | React-thunk | JSON
+                  </Text>
+                </Stack>
+
+                <Text>An individual project.</Text>
+
+                <Stack
+                  width={"70%"}
+                  m="auto"
+                  mt={"2rem"}
+                  direction={"row"}
+                  padding={2}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Link
+                    className="project-github-link"
+                    href="https://github.com/shivamkumar24/NoteBook"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      _focus={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      GitHub
+                    </Button>
+                  </Link>
+                  <Link
+                    className="project-deployed-link"
+                    href="https://note-book-beta.vercel.app/"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      bg={"blue.400"}
+                      color={"white"}
+                      boxShadow={
+                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                      }
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      _focus={{
+                        bg: "blue.500",
+                      }}
+                    >
+                      Demo
+                    </Button>
+                  </Link>
+                </Stack>
+              </Stack>
+            </Stack>
+          </GridItem>
+
+          {/* Sixth Project */}
+          <GridItem className="project-card">
+            <Stack
+              borderWidth="1px"
+              borderRadius="lg"
+              m="auto"
+              w={{ sm: "90%", md: "90%" }}
+              height="auto"
+              direction={{ base: "column", md: "column" }}
+              bg={useColorModeValue("cyan", "gray.900")}
+              boxShadow={"xl"}
+              padding={4}
+              margin={4}
+              textAlign="center"
+            >
+              <Flex flex={1} bg="blue.200">
                 <Image
                   objectFit="cover"
                   boxSize="100%"
@@ -623,7 +735,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Sixth Project */}
+          {/* Seventh Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -740,7 +852,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Seventh Project */}
+          {/* Eighth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
