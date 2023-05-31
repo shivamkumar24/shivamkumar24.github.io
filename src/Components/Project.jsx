@@ -99,7 +99,7 @@ const Project = forwardRef((props, ref) => {
                   </Text>
                 </Stack>
 
-                <Text>An Individual Project</Text>
+                <Text>An Individual Project.</Text>
 
                 <Stack
                   width={"70%"}
@@ -547,7 +547,8 @@ const Project = forwardRef((props, ref) => {
                   px={3}
                 >
                   NoteBook is a notes application. That is maintain your daily
-                  life note. it works like sticky note.
+                  life note. it works like sticky note. You can do add, delete,
+                  and update your note.
                 </Text>
 
                 <Stack
