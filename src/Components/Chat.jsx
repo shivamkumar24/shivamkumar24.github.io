@@ -41,10 +41,10 @@ const Chat = forwardRef((props, ref) => {
   const SendMail = () => {
     emailjs
       .send(
-        "service_ftarydb",
-        "template_gt44zej",
+        "service_i2hkmo5",
+        "template_zq8dleu",
         emailData,
-        "5zH2P1SlQ5i4P9vOG"
+        "ae60aBiY4mqn_XZfT"
       )
       .then((res) => {
         toast({
@@ -122,7 +122,7 @@ const Chat = forwardRef((props, ref) => {
                           _hover={{ border: "2px solid #1C6FEB" }}
                           leftIcon={<MdEmail color="#1970F1" size="20px" />}
                         >
-                          shivam2432000@gmail.com
+                          shivamkumg@gmail.com
                         </Button>
                         <Button
                           size="md"
