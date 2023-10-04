@@ -54,6 +54,122 @@ const Project = forwardRef((props, ref) => {
                 <Image
                   objectFit="cover"
                   boxSize="100%"
+                  src={"https://i.ibb.co/Hd5BFxw/Weather-App.png"}
+                />
+              </Flex>
+              <Stack
+                flex={1}
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                p={1}
+                pt={2}
+              >
+                <Heading
+                  className="project-title"
+                  fontSize={"xl"}
+                  fontFamily={"body"}
+                >
+                  Weather App
+                </Heading>
+
+                <Text
+                  className="project-description"
+                  textAlign={"center"}
+                  color={useColorModeValue("gray.700", "gray.400")}
+                  px={3}
+                >
+                  This is Weather App which help you to know about particular
+                  place temperature and weather.
+                </Text>
+
+                <Stack
+                  display="flex"
+                  flexDirection={{ base: "column", md: "row" }}
+                >
+                  <Text fontWeight={"bold"} className="project-tech-stack">
+                    <span style={{ color: "red", fontWeight: "600" }}>
+                      Tech Stack:
+                    </span>{" "}
+                    React | JavaScript | CSS
+                  </Text>
+                </Stack>
+
+                <Text>An Individual Project.</Text>
+
+                <Stack
+                  width={"70%"}
+                  m="auto"
+                  mt={"2rem"}
+                  direction={"row"}
+                  padding={2}
+                  justifyContent={"space-between"}
+                  alignItems={"center"}
+                >
+                  <Link
+                    className="project-github-link"
+                    href="https://github.com/shivamkumar24/Weather-App"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      _focus={{
+                        bg: "gray.200",
+                      }}
+                    >
+                      GitHub
+                    </Button>
+                  </Link>
+                  <Link
+                    className="project-deployed-link"
+                    href="https://weather-app-sage-nu-80.vercel.app/"
+                    target={"_blank"}
+                  >
+                    <Button
+                      flex={1}
+                      fontSize={"sm"}
+                      rounded={"full"}
+                      bg={"blue.400"}
+                      color={"white"}
+                      boxShadow={
+                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                      }
+                      _hover={{
+                        bg: "blue.500",
+                      }}
+                      _focus={{
+                        bg: "blue.500",
+                      }}
+                    >
+                      Demo
+                    </Button>
+                  </Link>
+                </Stack>
+              </Stack>
+            </Stack>
+          </GridItem>
+
+          {/* Second Project */}
+          <GridItem className="project-card">
+            <Stack
+              borderWidth="1px"
+              borderRadius="lg"
+              m="auto"
+              w={{ sm: "90%", md: "90%" }}
+              height="auto"
+              direction={{ base: "column", md: "column" }}
+              bg={useColorModeValue("cyan", "gray.900")}
+              boxShadow={"xl"}
+              padding={4}
+              margin={4}
+              textAlign="center"
+            >
+              <Flex flex={1} bg="blue.200">
+                <Image
+                  objectFit="cover"
+                  boxSize="100%"
                   src={"outfitstore.jpeg"}
                 />
               </Flex>
@@ -155,7 +271,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Second Project */}
+          {/* Third Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -270,7 +386,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Third Project */}
+          {/* Fourth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -388,7 +504,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Fourth Project */}
+          {/* Fifth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -506,7 +622,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Fifth Project */}
+          {/* Sixth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -619,7 +735,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Sixth Project */}
+          {/* Seventh Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -736,7 +852,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Seventh Project */}
+          {/* Eighth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
@@ -853,7 +969,7 @@ const Project = forwardRef((props, ref) => {
             </Stack>
           </GridItem>
 
-          {/* Eighth Project */}
+          {/* Nineth Project */}
           <GridItem className="project-card">
             <Stack
               borderWidth="1px"
