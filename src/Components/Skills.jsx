@@ -15,7 +15,7 @@ const Skills = forwardRef((props, ref) => {
       <Stack
         w="100%"
         margin="auto"
-        backgroundColor="purple.300"
+        backgroundColor="#ADD8E6"
         padding={{ base: "10px 1%", md: "10px", lg: "10px 22%" }}
       >
         <Box
@@ -30,6 +30,7 @@ const Skills = forwardRef((props, ref) => {
 
         {/* Soft Skills */}
         <Heading
+          color="#008080"
           paddingLeft={{ base: "12px", md: "25px" }}
           textDecoration="underline"
         >

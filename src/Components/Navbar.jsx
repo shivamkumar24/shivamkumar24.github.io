@@ -17,6 +17,7 @@ import React, { useEffect } from "react";
 const Links = [
   { to: "/", name: "Home", class: "nav-link home" },
   { to: "/about", name: "About Me", class: "nav-link about" },
+  { to: "/experience", name: "Experience", class: "nav-link experience" },
   { to: "/projects", name: "Projects", class: "nav-link projects" },
   { to: "/techstack", name: "Tech-Stack", class: "nav-link techstack" },
   { to: "/skills", name: "Skills", class: "nav-link skills" },
@@ -54,6 +55,10 @@ export default function Navbar({ refs }) {
         scrollSmoothHandler(refs.aboutRef);
         break;
 
+      case "/experience":
+        scrollSmoothHandler(refs.experienceRef);
+        break;
+
       case "/projects":
         scrollSmoothHandler(refs.projectRef);
         break;
@@ -84,7 +89,7 @@ export default function Navbar({ refs }) {
   return (
     <div>
       <Box
-        bg={useColorModeValue("purple.300", "black.900")}
+        bg={useColorModeValue("#008080", "black.900")}
         px={4}
         pos="fixed"
         zIndex={2}

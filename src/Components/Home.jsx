@@ -13,7 +13,7 @@ const Home = forwardRef((props, ref) => {
     <section ref={ref} id="home">
       <Box
         display="flex"
-        backgroundColor="whatsapp.200"
+        backgroundColor="#98FB98"
         pt={{ base: "45px", md: "80px" }}
         pb={{ base: "20px" }}
         justifyContent={{ base: "center", md: "space-around" }}

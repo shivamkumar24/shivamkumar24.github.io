@@ -16,10 +16,10 @@ import {
 const Project = forwardRef((props, ref) => {
   return (
     <section ref={ref} id="projects">
-      <Stack margin="auto" backgroundColor="cornflowerblue">
+      <Stack margin="auto" backgroundColor="#ADD8E6">
         {/* Projects */}
         <Box
-          color="yellow"
+          color="#008080"
           fontWeight="bold"
           fontSize={{ base: "22px", md: "45px" }}
           textAlign={{ base: "center" }}
