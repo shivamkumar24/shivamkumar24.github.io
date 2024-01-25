@@ -1,11 +1,11 @@
 import {
-  GridItem,
+  Box,
+  Grid,
   Stack,
   Image,
   Heading,
+  GridItem,
   useColorModeValue,
-  Grid,
-  Box,
 } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 

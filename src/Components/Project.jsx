@@ -1,22 +1,65 @@
-import React, { forwardRef } from "react";
+import React, { useState, forwardRef } from "react";
+import projectData from "../Utils/projectData";
 import {
   Box,
-  Button,
+  Tab,
+  Tabs,
+  Text,
   Flex,
   Grid,
-  GridItem,
-  Heading,
-  Image,
   Link,
   Stack,
-  Text,
-  useColorModeValue,
+  Image,
+  Button,
+  TabList,
+  Heading,
+  GridItem,
 } from "@chakra-ui/react";
 
 const Project = forwardRef((props, ref) => {
+  const projectsPerPage = 3;
+  const [data, setData] = useState(projectData);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalProjects = data.length;
+  const totalPages = Math.ceil(totalProjects / projectsPerPage);
+
+  const handleProjectType = (project_type) => {
+    if (project_type === "All") {
+      setData(projectData);
+    } else {
+      let filtered_project_data = projectData.filter(
+        (res) => res.type === project_type
+      );
+      setData(filtered_project_data);
+    }
+    setCurrentPage(1);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const endIndex = startIndex + projectsPerPage;
+
+  const displayedProjects = data.slice(startIndex, endIndex);
+
   return (
     <section ref={ref} id="projects">
-      <Stack margin="auto" backgroundColor="#ADD8E6">
+      <Stack
+        margin="auto"
+        backgroundColor="#ADD8E6"
+        padding={{ base: "5px", md: "15px", lg: "18px" }}
+      >
         {/* Projects */}
         <Box
           color="#008080"
@@ -27,6 +70,20 @@ const Project = forwardRef((props, ref) => {
         >
           Some projects I've Built
         </Box>
+
+        <Box display="flex" justifyContent="center">
+          <Tabs variant="soft-rounded" colorScheme="green">
+            <TabList>
+              <Tab onClick={() => handleProjectType("All")}>ALL</Tab>
+              <Tab onClick={() => handleProjectType("MERN")}>MERN</Tab>
+              <Tab onClick={() => handleProjectType("React")}>ReactJS</Tab>
+              <Tab onClick={() => handleProjectType("JavaScript")}>
+                JavaScript
+              </Tab>
+            </TabList>
+          </Tabs>
+        </Box>
+
         <Grid
           templateColumns={{
             sm: "repeat(1,1fr)",
@@ -35,1053 +92,134 @@ const Project = forwardRef((props, ref) => {
           }}
           gap={6}
         >
-          {/* First Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"https://i.ibb.co/Hd5BFxw/Weather-App.png"}
-                />
-              </Flex>
+          {displayedProjects.map((el, i) => (
+            <GridItem className="project-card" key={i}>
               <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
+                borderWidth="1px"
+                borderRadius="lg"
+                m="auto"
+                w={{ sm: "90%", md: "90%" }}
+                height="auto"
+                direction={{ base: "column", md: "column" }}
+                bg={"cyan"}
+                boxShadow={"xl"}
+                padding={4}
+                margin={4}
+                textAlign="center"
               >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  Weather App
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  This is Weather App which help you to know about particular
-                  place temperature and weather.
-                </Text>
-
+                <Flex flex={1} bg="blue.200">
+                  <Image objectFit="cover" boxSize="100%" src={el.banner} />
+                </Flex>
                 <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
+                  flex={1}
+                  flexDirection="column"
+                  justifyContent="center"
+                  alignItems="center"
+                  p={1}
+                  pt={2}
                 >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    React | JavaScript | CSS
+                  <Heading
+                    className="project-title"
+                    fontSize={"xl"}
+                    fontFamily={"body"}
+                  >
+                    {el.title}
+                  </Heading>
+
+                  <Text
+                    className="project-description"
+                    textAlign={"center"}
+                    color={"gray.700"}
+                    px={3}
+                  >
+                    {el.desc}
                   </Text>
-                </Stack>
 
-                <Text>An Individual Project.</Text>
+                  <Stack
+                    display="flex"
+                    flexDirection={{ base: "column", md: "row" }}
+                  >
+                    <Text fontWeight={"bold"} className="project-tech-stack">
+                      <span style={{ color: "red", fontWeight: "600" }}>
+                        Tech Stack:
+                      </span>{" "}
+                      {el.tech_stack.map((elem) => elem).join(" | ")}
+                    </Text>
+                  </Stack>
 
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/Weather-App"
-                    target={"_blank"}
+                  <Text>{el.work_type}</Text>
+
+                  <Stack
+                    width={"70%"}
+                    m="auto"
+                    mt={"2rem"}
+                    direction={"row"}
+                    padding={2}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
                   >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
+                    <Link
+                      className="project-github-link"
+                      href={el.github}
+                      target={"_blank"}
                     >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://weather-app-sage-nu-80.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
+                      <Button
+                        flex={1}
+                        fontSize={"sm"}
+                        rounded={"full"}
+                        _focus={{
+                          bg: "gray.200",
+                        }}
+                      >
+                        GitHub
+                      </Button>
+                    </Link>
+                    <Link
+                      className="project-deployed-link"
+                      href={el.demo}
+                      target={"_blank"}
                     >
-                      Demo
-                    </Button>
-                  </Link>
+                      <Button
+                        flex={1}
+                        fontSize={"sm"}
+                        rounded={"full"}
+                        bg={"blue.400"}
+                        color={"white"}
+                        boxShadow={
+                          "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
+                        }
+                        _hover={{
+                          bg: "blue.500",
+                        }}
+                        _focus={{
+                          bg: "blue.500",
+                        }}
+                      >
+                        Demo
+                      </Button>
+                    </Link>
+                  </Stack>
                 </Stack>
               </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Second Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"outfitstore.jpeg"}
-                />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  OutfitStore.com
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  The outfit is a MERN Stack web application & is a clone of
-                  lifestylestore.com. With a vast collection of fashion and
-                  clothing products, we offer a seamless shopping experience.
-                  Our user-friendly interface ensures a hassle-free shopping
-                  experience.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    NodeJS | ExpressJS | MongoDB | JWT-Authentication | Bcrypt |
-                    React | React-Router | ChakraUI
-                  </Text>
-                </Stack>
-
-                <Text>An Individual Project.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/Lifestylestores.com-Clone"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://outfitstore-eta.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Third Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image objectFit="cover" boxSize="100%" src={"doorstep.jpeg"} />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  DoorStep.com
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  DoorStep.com is clone of nearbuy.com MERN Stack web
-                  application that allows you to buy voucher and coupons. It has
-                  a variety of categories, just visit the product listing page
-                  and you will see all the services near your location.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    NodeJS | ExpressJS | MongoDB | JWT-Authentication | Bcrypt |
-                    React | React-Router | React-Redux | React-thunk | ChakraUI
-                  </Text>
-                </Stack>
-
-                <Text>A group project executed in 5 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/KaustubhN12/dizzy-stitch-9009"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://doorstep-iota.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Fourth Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"fitfactory.jpeg"}
-                />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  Fit-Factory.com
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  Fit-Factory is clone of HealthKart. This is generally based on
-                  products which is related to our health and it is that website
-                  where we sell product direct to customer.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    React | React-Router | React-Redux | React-thunk | JSON |
-                    ChakraUI
-                  </Text>
-                </Stack>
-
-                <Text>A group project executed in 4 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/Sachin-Kesarwani/detailed-hour-2985/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://fit-factory.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Fifth Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"trademart.jpeg"}
-                />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  TradeMart.com
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  TradeMart is clone website of IndiaMart. IndiaMart Indian
-                  e-commerce company that provides B2B and customer to customer
-                  sales services via its web portal.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    React | React-Router | React-Redux | React-thunk | Firebase
-                    | JSON
-                  </Text>
-                </Stack>
-
-                <Text>A group project executed in 5 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/jithstephen13/TradeMart"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://trademart.netlify.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Sixth Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image objectFit="cover" boxSize="100%" src={"notebook.jpeg"} />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  NoteBook
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  NoteBook is a notes application. That is maintain your daily
-                  life note. it works like sticky note. You can do add, delete,
-                  and update your note.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    React | React-Router | React-Redux | React-thunk | JSON
-                  </Text>
-                </Stack>
-
-                <Text>An individual project.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/NoteBook"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://note-book-beta.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Seventh Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"beautybebo.jpeg"}
-                />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  Beautybebo.com - Clone
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  Beauty Bebo is India's fastest-growing online retail store for
-                  makeup, skin care, hair care, personal care, mom and baby
-                  care, fragrance, and Ayurveda products.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text fontWeight={"bold"} className="project-tech-stack">
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    ReactJS | React-Router | API | JavaScript | ES6
-                  </Text>
-                </Stack>
-
-                <Text>An individual project executed in 4 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/Beautybebo.com-Clone"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://beautybebo-com-clone-jdmb.vercel.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Eighth Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image
-                  objectFit="cover"
-                  boxSize="100%"
-                  src={"sugarcosmetics.jpeg"}
-                />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  SugarCosmetics.com - Clone
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  Sugar Cosmetics is one of India's fastest-growing premium
-                  cosmetic companies. it has become the first choice of many
-                  Indian women.
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text className="project-tech-stack" fontWeight={"bold"}>
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    JavaScript | ES6 | Local Storage | CSS | HTML
-                  </Text>
-                </Stack>
-
-                <Text>An individual project executed in 4 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/SugarCosmetics.com-Clone"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://effortless-strudel-bc1dac.netlify.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
-
-          {/* Nineth Project */}
-          <GridItem className="project-card">
-            <Stack
-              borderWidth="1px"
-              borderRadius="lg"
-              m="auto"
-              w={{ sm: "90%", md: "90%" }}
-              height="auto"
-              direction={{ base: "column", md: "column" }}
-              bg={useColorModeValue("cyan", "gray.900")}
-              boxShadow={"xl"}
-              padding={4}
-              margin={4}
-              textAlign="center"
-            >
-              <Flex flex={1} bg="blue.200">
-                <Image objectFit="cover" boxSize="100%" src={"myntra.jpeg"} />
-              </Flex>
-              <Stack
-                flex={1}
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                p={1}
-                pt={2}
-              >
-                <Heading
-                  className="project-title"
-                  fontSize={"xl"}
-                  fontFamily={"body"}
-                >
-                  Myntra.com - Clone
-                </Heading>
-
-                <Text
-                  className="project-description"
-                  textAlign={"center"}
-                  color={useColorModeValue("gray.700", "gray.400")}
-                  px={3}
-                >
-                  Myntra is a one stop shop for all your fashion and lifestyle
-                  needs. Being India's largest e-commerce store for fashion and
-                  lifestyle products
-                </Text>
-
-                <Stack
-                  display="flex"
-                  flexDirection={{ base: "column", md: "row" }}
-                >
-                  <Text className="project-tech-stack" fontWeight={"bold"}>
-                    <span style={{ color: "red", fontWeight: "600" }}>
-                      Tech Stack:
-                    </span>{" "}
-                    JavaScript | ES6 | Local Storage | CSS | HTML
-                  </Text>
-                </Stack>
-
-                <Text>A group project executed in 4 days.</Text>
-
-                <Stack
-                  width={"70%"}
-                  m="auto"
-                  mt={"2rem"}
-                  direction={"row"}
-                  padding={2}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
-                  <Link
-                    className="project-github-link"
-                    href="https://github.com/shivamkumar24/Myntra_Clone"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      _focus={{
-                        bg: "gray.200",
-                      }}
-                    >
-                      GitHub
-                    </Button>
-                  </Link>
-                  <Link
-                    className="project-deployed-link"
-                    href="https://idyllic-begonia-67c760.netlify.app/"
-                    target={"_blank"}
-                  >
-                    <Button
-                      flex={1}
-                      fontSize={"sm"}
-                      rounded={"full"}
-                      bg={"blue.400"}
-                      color={"white"}
-                      boxShadow={
-                        "0px 1px 25px -5px rgb(66 153 225 / 48%), 0 10px 10px -5px rgb(66 153 225 / 43%)"
-                      }
-                      _hover={{
-                        bg: "blue.500",
-                      }}
-                      _focus={{
-                        bg: "blue.500",
-                      }}
-                    >
-                      Demo
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Stack>
-          </GridItem>
+            </GridItem>
+          ))}
         </Grid>
+
+        {/* Pagination */}
+        <Stack direction="row" mt={4} spacing={4} justifyContent="center">
+          <Button onClick={handlePreviousPage} isDisabled={currentPage === 1}>
+            Previous
+          </Button>
+          <Text>
+            Page {currentPage} of {totalPages}
+          </Text>
+          <Button
+            onClick={handleNextPage}
+            isDisabled={currentPage === totalPages}
+          >
+            Next
+          </Button>
+        </Stack>
       </Stack>
     </section>
   );
