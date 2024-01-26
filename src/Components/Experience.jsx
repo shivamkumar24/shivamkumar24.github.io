@@ -1,4 +1,3 @@
-import React, { forwardRef } from "react";
 import {
   Box,
   Text,
@@ -7,24 +6,10 @@ import {
   ListItem,
   UnorderedList,
 } from "@chakra-ui/react";
+import React, { forwardRef } from "react";
+import experienceData from "../Utils/experienceData";
 
 const Experience = forwardRef((props, ref) => {
-  const experience_data = [
-    {
-      role: "SDE-Intern",
-      location: "Remote",
-      start_date: "Sep 2023",
-      end_date: "Feb 2024",
-      company_name: "Masai School",
-      works: [
-        "Developed and maintained web applications using languages such as HTML, CSS, JavaScript, ReactJS, TypeScript, Redux and Chakra-ui.",
-        "This opportunity has allowed me to apply my knowledge and learn from experienced professionals in the industry.",
-        "Implemented responsive designs and CRUD Operation's.",
-        "Developed Masai Alumni website www.masaialumni.com",
-      ],
-    },
-  ];
-
   return (
     <section ref={ref} id="experience" class="experience section">
       <Stack
@@ -43,8 +28,7 @@ const Experience = forwardRef((props, ref) => {
         >
           Experience
         </Box>
-
-        {experience_data?.map((el, i) => (
+        {experienceData.map((el, i) => (
           <Box
             key={i}
             p={{ base: "12px", md: "18px", lg: "20px" }}

@@ -1,7 +1,7 @@
-import { Box, Button, HStack, IconButton, Image, Link } from "@chakra-ui/react";
-import { forwardRef } from "react";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { Box, Link, Image, Button, HStack, IconButton } from "@chakra-ui/react";
+import React, { forwardRef } from "react";
 import { MdEmail } from "react-icons/md";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 const Home = forwardRef((props, ref) => {
   const property = {

@@ -1,5 +1,3 @@
-import React, { useState, forwardRef } from "react";
-import projectData from "../Utils/projectData";
 import {
   Box,
   Tab,
@@ -15,6 +13,8 @@ import {
   Heading,
   GridItem,
 } from "@chakra-ui/react";
+import projectData from "../Utils/projectData";
+import React, { useState, forwardRef } from "react";
 
 const Project = forwardRef((props, ref) => {
   const projectsPerPage = 3;
@@ -58,7 +58,7 @@ const Project = forwardRef((props, ref) => {
       <Stack
         margin="auto"
         backgroundColor="#ADD8E6"
-        padding={{ base: "5px", md: "15px", lg: "18px" }}
+        padding={{ base: "5px 10px", md: "15px", lg: "18px" }}
       >
         {/* Projects */}
         <Box

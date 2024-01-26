@@ -1,18 +1,18 @@
 import {
   Box,
-  Flex,
-  HStack,
   Link,
-  IconButton,
-  Button,
-  useDisclosure,
-  useColorModeValue,
+  Flex,
   Stack,
   Image,
+  HStack,
+  Button,
+  IconButton,
+  useDisclosure,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { NavLink, useLocation } from "react-router-dom";
 import React, { useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 const Links = [
   { to: "/", name: "Home", class: "nav-link home" },

@@ -1,28 +1,28 @@
 import {
-  Container,
-  Flex,
   Box,
-  Heading,
+  Link,
+  Flex,
   Text,
-  IconButton,
+  Wrap,
+  Input,
   Button,
   VStack,
   HStack,
-  Wrap,
-  WrapItem,
-  FormControl,
-  FormLabel,
-  Input,
-  InputGroup,
-  InputLeftElement,
+  Heading,
   Textarea,
-  Link,
   useToast,
+  WrapItem,
+  Container,
+  FormLabel,
+  InputGroup,
+  IconButton,
+  FormControl,
+  InputLeftElement,
 } from "@chakra-ui/react";
-import React, { forwardRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
+import React, { forwardRef, useState } from "react";
 import { BsGithub, BsPerson, BsLinkedin } from "react-icons/bs";
+import { MdPhone, MdEmail, MdLocationOn, MdOutlineEmail } from "react-icons/md";
 
 const initialValue = {
   name: "",

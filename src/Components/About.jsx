@@ -1,5 +1,5 @@
-import { Box, Image } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
+import { Box, Image } from "@chakra-ui/react";
 
 const About = forwardRef((props, ref) => {
   return (

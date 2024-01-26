@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
-import GitHubCalendar from "react-github-calendar";
+import { Box } from "@chakra-ui/react";
 import ReactTooltip from "react-tooltip";
+import GitHubCalendar from "react-github-calendar";
 
 const Calender = () => {
   const selectLastHalfYear = (contributions) => {
