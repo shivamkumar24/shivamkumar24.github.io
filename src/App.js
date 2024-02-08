@@ -10,11 +10,10 @@ import Skills from "./Components/Skills";
 import Chat from "./Components/Chat";
 import { useRef } from "react";
 
-
 function App() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
-  const experienceRef=useRef(null);
+  const experienceRef = useRef(null);
   const projectRef = useRef(null);
   const techStackRef = useRef(null);
   const skillsRef = useRef(null);
@@ -35,12 +34,12 @@ function App() {
       />
       <Home ref={homeRef} />
       <About ref={aboutRef} />
+      <TechSkill ref={techStackRef} />
+      <Skills ref={skillsRef} />
       <Experience ref={experienceRef} />
       <Project ref={projectRef} />
       <Calender />
       <Stats />
-      <TechSkill ref={techStackRef} />
-      <Skills ref={skillsRef} />
       <Chat ref={contactRef} />
     </div>
   );
