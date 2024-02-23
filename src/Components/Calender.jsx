@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import ReactTooltip from "react-tooltip";
 import GitHubCalendar from "react-github-calendar";
+import { LIGHTSTEELBLUE } from "../Constants/Typography";
 
 const Calender = () => {
   const selectLastHalfYear = (contributions) => {
@@ -24,6 +25,7 @@ const Calender = () => {
   return (
     <div style={{ padding: "18px", backgroundColor: "rgb(198, 213, 206)" }}>
       <Box
+        color={LIGHTSTEELBLUE}
         fontWeight="bold"
         fontSize={{ base: "22px", md: "45px" }}
         marginBottom="15px"

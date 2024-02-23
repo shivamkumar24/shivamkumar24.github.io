@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React, { forwardRef } from "react";
 import experienceData from "../Utils/experienceData";
+import { LIGHTSTEELBLUE } from "../Constants/Typography";
 
 const Experience = forwardRef((props, ref) => {
   return (
@@ -15,11 +16,11 @@ const Experience = forwardRef((props, ref) => {
       <Stack
         w="100%"
         margin="auto"
-        bgColor={"#F8F8F8"}
         mb={{ base: "20px", md: "25px" }}
         padding={{ base: "10px 1%", md: "10px", lg: "10px 22%" }}
       >
         <Box
+          color={LIGHTSTEELBLUE}
           fontWeight="bold"
           mb={{ base: "12px", md: "22px" }}
           fontSize={{ base: "22px", md: "45px" }}

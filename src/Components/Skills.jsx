@@ -1,89 +1,138 @@
-import React, { forwardRef } from "react";
-import softSkillData from "../Utils/skillData";
-import { Box, Grid, Stack, Image, Heading, GridItem } from "@chakra-ui/react";
+import React from "react";
+import {
+  R2,
+  R3,
+  R6,
+  SA,
+  AUTO,
+  SMALL,
+  CENTER,
+  COLUMN,
+  FILL_80PARENT,
+  LIGHTSTEELBLUE,
+} from "../Constants/Typography";
+import techData from "../Utils/techData";
+import toolData from "../Utils/toolData";
+import { Box, Flex, Grid, Image, Heading } from "@chakra-ui/react";
 
-const Skills = forwardRef((props, ref) => {
+const Skills = () => {
   return (
-    <section ref={ref} id="skills">
-      <Stack
-        w="100%"
-        margin="auto"
-        backgroundColor="#ADD8E6"
-        padding={{ base: "10px 1%", md: "10px", lg: "10px 22%" }}
+    <Grid id="skills">
+      <Box
+        color={LIGHTSTEELBLUE}
+        fontWeight="bold"
+        fontSize={{ base: "22px", md: "45px" }}
+        textAlign={{ base: "center" }}
+        textDecoration="underline"
+        m={{ base: "10px 5%", md: "18px 10px", lg: "20px 10px" }}
       >
-        <Box
-          color="red.600"
-          fontWeight="bold"
-          fontSize={{ base: "22px", md: "45px" }}
-          textAlign={{ base: "center" }}
-          textDecoration="underline"
-        >
-          My Skills
-        </Box>
+        Skills
+      </Box>
 
-        {/* Soft Skills */}
-        <Heading
-          color="#008080"
-          paddingLeft={{ base: "12px", md: "25px" }}
-          textDecoration="underline"
-        >
-          Soft Skills
-        </Heading>
-        <Grid
-          templateColumns={{
-            base: "repeat(2,1fr)",
-            md: "repeat(3, 1fr)",
-            lg: "repeat(4,1fr)",
-          }}
-          gap={4}
-        >
-          {softSkillData.map((el, i) => (
-            <GridItem className="skills-card" key={i}>
-              <Stack
-                borderWidth="1px"
-                borderRadius="lg"
-                m="auto"
-                w={{ sm: "75%", md: "90%" }}
-                height="auto"
-                direction={{ base: "column", md: "column" }}
-                bg={"black"}
-                boxShadow={"xl"}
-                padding="10px"
-                margin={{ sm: 2, md: 4 }}
-                textAlign="center"
+      <Grid
+        gridTemplateColumns={{
+          base: R2,
+          sm: R3,
+          md: R3,
+          lg: R6,
+        }}
+        w={{
+          base: FILL_80PARENT,
+          sm: FILL_80PARENT,
+          md: FILL_80PARENT,
+        }}
+        gap="20px"
+        m={AUTO}
+      >
+        {techData.map((item) => (
+          <Box
+            key={item.id}
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            borderRadius={"20px"}
+          >
+            <Flex justifyContent={SA} direction={COLUMN} align={CENTER}>
+              <Image
+                w={"50%"}
+                padding={"10px"}
+                height={{
+                  base: "60px",
+                  sm: "80px",
+                  md: "80px",
+                  lg: "80px",
+                }}
+                src={item.frontendtech_desc}
+              />
+              <Heading
+                as={"h4"}
+                size={SMALL}
+                color={LIGHTSTEELBLUE}
+                textAlign={CENTER}
+                marginBottom={"5px"}
               >
-                <Image
-                  className="skills-card-img"
-                  display="block"
-                  width={{ base: "70%", md: "100px" }}
-                  height="130px"
-                  margin={{ sm: "auto", md: "auto" }}
-                  src={el.banner}
-                />
-
-                <Heading
-                  className="skills-card-name"
-                  fontSize={{ sm: "sm", md: "xl" }}
-                  fontFamily={"body"}
-                  color="white"
-                >
-                  {el.title}
-                </Heading>
-              </Stack>
-            </GridItem>
-          ))}
-        </Grid>
-
-        {/* Tech Skills */}
-        {/* <Heading
-          paddingLeft={{ base: "12px", md: "25px" }}
-          textDecoration="underline"
-        >
-          Tech Skills
-        </Heading> */}
-      </Stack>
-    </section>
+                {item.frontendtech_name}
+              </Heading>
+            </Flex>
+          </Box>
+        ))}
+      </Grid>
+      <Box
+        color={LIGHTSTEELBLUE}
+        fontWeight="bold"
+        fontSize={{ base: "22px", md: "45px" }}
+        textAlign={{ base: "center" }}
+        textDecoration="underline"
+        m={{ base: "10px 5%", md: "18px 10px", lg: "20px 10px" }}
+      >
+        Tools
+      </Box>
+      <Grid
+        gridTemplateColumns={{
+          base: R2,
+          sm: R3,
+          md: R3,
+          lg: R6,
+        }}
+        w={{
+          base: FILL_80PARENT,
+          sm: FILL_80PARENT,
+          md: FILL_80PARENT,
+        }}
+        gap="20px"
+        m={AUTO}
+      >
+        {toolData.map((item) => (
+          <Box
+            key={item.id}
+            boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+            borderRadius={"20px"}
+          >
+            <Flex justifyContent={SA} direction={COLUMN} align={CENTER}>
+              <Image
+                w={"50%"}
+                padding={"10px"}
+                height={{
+                  base: "60px",
+                  sm: "80px",
+                  md: "80px",
+                  lg: "80px",
+                }}
+                src={item.tool_desc}
+              />
+              <Heading
+                as={"h4"}
+                size={SMALL}
+                color={LIGHTSTEELBLUE}
+                textAlign={CENTER}
+                marginBottom={"5px"}
+              >
+                {item.tool_name}
+              </Heading>
+            </Flex>
+          </Box>
+        ))}
+      </Grid>
+    </Grid>
   );
-});
+};
 
 export default Skills;

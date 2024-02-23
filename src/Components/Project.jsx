@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import projectData from "../Utils/projectData";
 import React, { useState, forwardRef } from "react";
+import { LIGHTSTEELBLUE } from "../Constants/Typography";
 
 const Project = forwardRef((props, ref) => {
   const projectsPerPage = 3;
@@ -57,12 +58,11 @@ const Project = forwardRef((props, ref) => {
     <section ref={ref} id="projects">
       <Stack
         margin="auto"
-        backgroundColor="#ADD8E6"
         padding={{ base: "5px 10px", md: "15px", lg: "18px" }}
       >
         {/* Projects */}
         <Box
-          color="#008080"
+          color={LIGHTSTEELBLUE}
           fontWeight="bold"
           fontSize={{ base: "22px", md: "45px" }}
           textAlign={{ base: "center" }}
@@ -207,15 +207,30 @@ const Project = forwardRef((props, ref) => {
 
         {/* Pagination */}
         <Stack direction="row" mt={4} spacing={4} justifyContent="center">
-          <Button onClick={handlePreviousPage} isDisabled={currentPage === 1}>
+          <Button
+            color={"white"}
+            onClick={handlePreviousPage}
+            isDisabled={currentPage === 1}
+            bgColor={LIGHTSTEELBLUE}
+            _hover={{
+              color: "white",
+              bgColor: { LIGHTSTEELBLUE },
+            }}
+          >
             Previous
           </Button>
           <Text>
             Page {currentPage} of {totalPages}
           </Text>
           <Button
+            color={"white"}
             onClick={handleNextPage}
+            bgColor={LIGHTSTEELBLUE}
             isDisabled={currentPage === totalPages}
+            _hover={{
+              color: "white",
+              bgColor: { LIGHTSTEELBLUE },
+            }}
           >
             Next
           </Button>

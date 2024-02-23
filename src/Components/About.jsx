@@ -1,11 +1,13 @@
 import React, { forwardRef } from "react";
 import { Box, Image } from "@chakra-ui/react";
+import { LIGHTSTEELBLUE } from "../Constants/Typography";
 
 const About = forwardRef((props, ref) => {
   return (
     <section ref={ref} id="about" class="about section">
       <Box>
         <Box
+          color={LIGHTSTEELBLUE}
           fontWeight="bold"
           fontSize={{ base: "22px", md: "45px" }}
           textAlign={{ base: "center" }}

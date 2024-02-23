@@ -4,7 +4,6 @@ import Navbar from "./Components/Navbar";
 import Calender from "./Components/Calender";
 import Stats from "./Components/Stats";
 import Project from "./Components/Project";
-import TechSkill from "./Components/TechSkill";
 import Experience from "./Components/Experience";
 import Skills from "./Components/Skills";
 import Chat from "./Components/Chat";
@@ -15,7 +14,6 @@ function App() {
   const aboutRef = useRef(null);
   const experienceRef = useRef(null);
   const projectRef = useRef(null);
-  const techStackRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
 
@@ -27,14 +25,12 @@ function App() {
           aboutRef,
           experienceRef,
           projectRef,
-          techStackRef,
           skillsRef,
           contactRef,
         }}
       />
       <Home ref={homeRef} />
       <About ref={aboutRef} />
-      <TechSkill ref={techStackRef} />
       <Skills ref={skillsRef} />
       <Experience ref={experienceRef} />
       <Project ref={projectRef} />
