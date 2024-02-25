@@ -3,7 +3,7 @@ const experienceData = [
     role: "SDE-Intern",
     location: "Remote",
     start_date: "Sep 2023",
-    end_date: "Current",
+    end_date: "Present",
     company_name: "Nolan Edutech Private Limited",
     works: [
       "Developed and maintained web applications using languages such as HTML, CSS, JavaScript, ReactJS, TypeScript, Redux and Chakra-ui.",
