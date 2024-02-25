@@ -38,10 +38,21 @@ const Experience = forwardRef((props, ref) => {
             boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
           >
             <Flex justifyContent={"space-between"} fontWeight={"bold"}>
-              <Text color={"red"} fontSize="xl">
+              <Text
+                color={"red"}
+                fontSize="xl"
+                textAlign={"start"}
+                w={{ base: "50%", md: "65%", lg: "65%" }}
+              >
                 {el.company_name}
               </Text>
-              <Text fontSize="lg">{el.location}</Text>
+              <Text
+                fontSize="lg"
+                textAlign={"end"}
+                w={{ base: "50%", md: "35%", lg: "35%" }}
+              >
+                {el.location}
+              </Text>
             </Flex>
 
             <Flex
@@ -49,8 +60,10 @@ const Experience = forwardRef((props, ref) => {
               fontWeight={"semibold"}
               fontStyle={"italic"}
             >
-              <Text>{el.role}</Text>
-              <Text>
+              <Text textAlign={"start"} w="50%">
+                {el.role}
+              </Text>
+              <Text textAlign={"end"} w="50%">
                 {el.start_date} - {el.end_date}
               </Text>
             </Flex>
