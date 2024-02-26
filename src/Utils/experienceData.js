@@ -6,9 +6,9 @@ const experienceData = [
     end_date: "Present",
     company_name: "Nolan Edutech Private Limited",
     works: [
-      "Developed and maintained web applications using languages such as HTML, CSS, JavaScript, ReactJS, TypeScript, Redux and Chakra-ui.",
-      "This opportunity has allowed me to apply my knowledge and learn from experienced professionals in the industry.",
-      "Implemented responsive designs and CRUD Operation's.",
+      "Collaborated with cross-functional teams on various software development projects.",
+      "Contributed to the entire development lifecycle, enhancing skills in problem-solving and critical thinking.",
+      "Gained hands-on experience in agile methodologies and adapted to evolving project requirements.",
       "Developed Masai Alumni website https://alumni.masaischool.com/",
     ],
   },
