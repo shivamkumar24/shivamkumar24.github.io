@@ -2,7 +2,7 @@ const projectData = [
   {
     banner: "https://i.ibb.co/wWXdX66/Alumni.png",
     title: "Masai Alumni Website",
-    desc: "Welcome to our alumni website! It's a place where people who graduated from our school or program can connect and help each other out. We have two main goals helping current students find jobs and supporting our alumni even after they have already landed a job.",
+    desc: "Welcome to our alumni website! It's a place where people who graduated from our school or program can connect and help each other out.",
     tech_stack: [
       "React",
       "React-Router",
