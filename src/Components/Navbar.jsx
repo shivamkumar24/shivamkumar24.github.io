@@ -17,10 +17,9 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 const Links = [
   { to: "/", name: "Home", class: "nav-link home" },
   { to: "/about", name: "About Me", class: "nav-link about" },
+  { to: "/skills", name: "Skills", class: "nav-link skills" },
   { to: "/experience", name: "Experience", class: "nav-link experience" },
   { to: "/projects", name: "Projects", class: "nav-link projects" },
-  { to: "/techstack", name: "Tech-Stack", class: "nav-link techstack" },
-  { to: "/skills", name: "Skills", class: "nav-link skills" },
   { to: "/contact", name: "Contact", class: "nav-link contact" },
 ];
 
@@ -55,20 +54,16 @@ export default function Navbar({ refs }) {
         scrollSmoothHandler(refs.aboutRef);
         break;
 
-      case "/experience":
-        scrollSmoothHandler(refs.experienceRef);
+      case "/skills":
+        scrollSmoothHandler(refs.skillsRef);
         break;
 
       case "/projects":
         scrollSmoothHandler(refs.projectRef);
         break;
 
-      case "/techstack":
-        scrollSmoothHandler(refs.techStackRef);
-        break;
-
-      case "/skills":
-        scrollSmoothHandler(refs.skillsRef);
+      case "/experience":
+        scrollSmoothHandler(refs.experienceRef);
         break;
 
       case "/contact":
