@@ -64,7 +64,7 @@ const projectData = [
     ],
     work_type: "An Individual Project.",
     github: "https://github.com/shivamkumar24/Lifestylestores.com-Clone",
-    demo: "https://outfitstore-eta.vercel.app/",
+    demo: "https://lifestylestores-com-clone.vercel.app/",
     type: "MERN",
   },
   {
